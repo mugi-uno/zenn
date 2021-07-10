@@ -3,7 +3,7 @@ title: "Next.jsのビルドにesbuild(esbuild-loader)を使う"
 emoji: "🏎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["nextjs", "webpack", "esbuild"]
-published: false
+published: true
 ---
 
 esbuild が爆速なのは周知の事実ですが、Next.js のビルドに利用できないかと思い立ち調べたところ、esbuild-loader を使うのが手っ取り早いようです。
