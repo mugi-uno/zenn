@@ -1,0 +1,25 @@
+{
+  "name": "zenn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "new:article": "zenn new:article",
+    "new:book": "zenn new:book",
+    "preview": "zenn preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mugi-uno/zenn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mugi-uno/zenn/issues"
+  },
+  "homepage": "https://github.com/mugi-uno/zenn#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.91"
+  }
+}
