@@ -3,7 +3,7 @@ title: "Prisma OpenTelemetry tracing で Prisma のボトルネックを追う"
 emoji: "⏱"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Prisma"]
-published: false
+published: true
 ---
 
 ## Prisma OpenTelemetry tracing
@@ -13,32 +13,31 @@ https://github.com/prisma/prisma/releases/tag/4.2.0
 
 その中で、 `OpenTelemetry tracing` というプレビュー版機能が追加されています。
 
-Prisma Client 経由で実行された処理についてログを取得し、
-パフォーマンス低下時のボトルネック調査に役立てることができるようです。
+Prisma Client 経由で実行された処理についてログを取得し、パフォーマンス低下時のボトルネック調査に役立てることができるようです。
 
-トレーシングの概要は、別途解説したブログが公開されています。
+トレーシングの概要は、別途解説ブログが公開されています。
 https://www.prisma.io/blog/tracing-launch-announcement-pmk4rlpc0ll
 
-トレーシング/メトリクスのための OSS である[OpenTelemetry](https://opentelemetry.io/) に準拠しているため、トレース結果は OpenTelemetry に互換のあるサービス/システムを用いて解析することができ、対応しているものとして [Jaeger](https://www.jaegertracing.io/)・[Honeycomb](https://www.honeycomb.io/trace/)・[Datadog](https://www.datadoghq.com/ja/) などが例として挙げられています。（[New Relic](https://newrelic.com/) とかもいけそう）
+トレーシング/メトリクスのための OSS である[OpenTelemetry](https://opentelemetry.io/) に準拠しているため、トレース結果は OpenTelemetry に互換のあるサービス/システムを用いて解析することができ、例として [Jaeger](https://www.jaegertracing.io/)・[Honeycomb](https://www.honeycomb.io/trace/)・[Datadog](https://www.datadoghq.com/ja/) など挙げられています。（[New Relic](https://newrelic.com/) とかもいけそう）
 
 ## トレーシングを試してみる
 
-トレーシングの具体的な使い方の例は、新たに追加された公式ドキュメントが参考になります
+具体的な使い方の例は、新たに追加された公式ドキュメントが参考になります
 https://www.prisma.io/docs/concepts/components/prisma-client/opentelemetry-tracing
 
 この内容に従ってトレーシングを試してみます。
 
 ### 注意事項: パフォーマンスへの影響
 
-ドキュメントの最初のほうに、トレーシングそのものがパフォーマンスに影響を与えてしまう可能性がある旨が[注意事項として記載](https://www.prisma.io/docs/concepts/components/prisma-client/opentelemetry-tracing#considerations-and-prerequisites)されています。
+ドキュメントのはじめに、トレーシングそのものがパフォーマンスに影響を与えてしまう可能性がある旨が[注意事項として記載](https://www.prisma.io/docs/concepts/components/prisma-client/opentelemetry-tracing#considerations-and-prerequisites)されています。
 
 > If your application sends a large number of spans to a collector, this can have a significant performance impact
 
-パフォーマンスが低下しているところにトレーシングを入れた結果で息の根を止めてしまった、、ということにならないよう注意は必要ですね。
+パフォーマンスが低下してるからトレーシングを入れたら息の根を止めてしまった、、ということにならないよう注意は必要ですね。
 
 ### 依存関係の追加
 
-必要な依存関係を追加します。Prisma は 4.2.0 以上のバージョンが入れば ok です。
+必要な依存関係を追加します。Prisma は 4.2.0 以上のバージョンが入れば OK です。
 
 ```
 npm install typescript ts-node @types/node -D
@@ -69,7 +68,7 @@ npm install @opentelemetry/semantic-conventions @opentelemetry/exporter-trace-ot
 npm install @opentelemetry/exporter-jaeger
 ```
 
-インストール後、実験用に DB をセットアップします
+インストール後、実験用に DB をセットアップします。
 
 ```
 npx prisma init --datasource-provider=sqlite
@@ -86,7 +85,7 @@ npx prisma init --datasource-provider=sqlite
 
 ### ダミーデータを突っ込む
 
-seed を使ってダミーのデータを投入します
+seed を使ってダミーのデータを投入します。
 
 ```ts:prisma/seed.ts
 import { Prisma, PrismaClient } from "@prisma/client";
@@ -115,7 +114,7 @@ npx ts-node prisma/seed.ts
 
 ### 実行用ファイルを準備
 
-OpenTelemetry セットアップ用のコードを作成します
+OpenTelemetry セットアップ用のコードを作成します。
 
 ```ts: setup.ts
 import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions";
@@ -169,7 +168,7 @@ query();
 
 ### Jaeger の起動
 
-実行ファイルが整ったので、ローカルでトレース結果を可視化するため、OSS の Jaeger を利用します。
+ローカルでトレース結果を可視化するため、OSS の Jaeger を利用します。
 
 https://www.jaegertracing.io/
 
@@ -202,8 +201,7 @@ npx ts-node ./main.ts
 
 ![](/images/prisma-orm-4_2/jaeger-top.png)
 
-上のグラフ内から、左上にある一際大きい丸をクリックして詳細にいくと、処理全体の時間に加え、細分化した際に個々に要した時間も確認できます。
-さらに内容を見ていくことで、発行されたクエリまで追うことができます。
+上のグラフ内から、左上にある一際大きい丸をクリックして詳細に遷移すると、処理全体の時間に加え、細分化した際に個々に要した時間も確認できます。さらに内容を見ていくことで、発行されたクエリまで追うことができます。
 
 ![](/images/prisma-orm-4_2/jaeger-detail.png)
 
@@ -211,4 +209,4 @@ npx ts-node ./main.ts
 
 今回は Prisma 自体の簡易的なセットアップから行ったため、いくつかプラスで必要な作業もありましたが、実際に Prisma を導入済みのケースであれば、OpenTelemetry 自体のセットアップのみで済むため、手軽に試してみることができそうです。
 
-うまく利用できればパフォーマンス改善時に強い味方になりそうです。
+うまく利用できればパフォーマンス改善時に強い味方になりそうですね！
