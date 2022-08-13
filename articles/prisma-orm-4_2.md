@@ -195,7 +195,7 @@ docker run -d --name jaeger \
 npx ts-node ./main.ts
 ```
 
-`http://localhost:16686/search` に接続し、 Jaerge のダッシュボードを確認してみます。
+`http://localhost:16686/search` に接続し、 Jaeger のダッシュボードを確認してみます。
 
 うまくトレースできていれば、左の `Service` から `example application` に切り替えられます。
 
