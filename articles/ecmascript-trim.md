@@ -7,7 +7,7 @@ published: false
 publication_name: "cybozu_frontend"
 ---
 
-## `String.prototype.trim()`
+# `String.prototype.trim()`
 
 JavaScript でコードを書いていて、とある文字列の端から空白を削除したくなったらどうしますか？
 
@@ -21,7 +21,7 @@ https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/St
 
 業務のなかで、これを正確に把握しなければいけないシチュエーションが発生し調べたので、記事として残しておきます。
 
-## mdn 上の記述
+# mdn 上の記述
 
 mdn の `String.prototype.trim()` ページの先頭では次のように説明されています。
 
@@ -36,7 +36,7 @@ mdn の `String.prototype.trim()` ページの先頭では次のように説明�
 
 もう少し厳密な答えが欲しいので、ECMAScript 自体の仕様を追ってみましょう。
 
-## ECMA-262 上の記述
+# ECMA-262 上の記述
 
 `String.prototype.trim()` 自体の仕様を確認します。
 
@@ -49,7 +49,7 @@ https://tc39.es/ecma262/#sec-trimstring
 
 というわけで、空白 (white space) の定義は `WhiteSpace` と `LineTerminator` を見ると確認できそうです。
 
-### `WhiteSpace`
+## `WhiteSpace`
 
 `WhiteSpace` の定義を確認すると、該当する文字コードが記載されています。
 https://tc39.es/ecma262/#prod-WhiteSpace
@@ -62,7 +62,7 @@ https://tc39.es/ecma262/#prod-WhiteSpace
 
 具体的な文字が出てきましたが、最後の `any code point in general category “Space_Separator”` は、一体なんでしょう？
 
-#### Unicode / General Category
+### Unicode / General Category
 
 Unicode では、文字の特性に応じてカテゴリとして分類されており、
 文字・数字・句読点・記号などがさらに細分化した形で区分けされています。
@@ -76,7 +76,7 @@ General Category についての詳細は、Unicode 仕様の "4.5 General Categ
 その中でも `Zs = Separator, space` の記述を確認できます。
 https://www.unicode.org/versions/Unicode15.0.0/ch04.pdf
 
-#### Zs = Space_Separator に含まれる文字
+### Zs = Space_Separator に含まれる文字
 
 では、`Space_Separator` に含まれる文字は何でしょうか。
 
@@ -112,7 +112,7 @@ https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=[:General_Category=Sp
 
 これらすべてが対象となりトリムされるようです。
 
-### `LineTerminator`
+## `LineTerminator`
 
 `WhiteSpace` のほうでだいぶ寄り道をしてしまいましたが、ECMA-262 での空白の定義には `LineTerminator` も含まれます。
 https://tc39.es/ecma262/#sec-line-terminators
@@ -126,7 +126,7 @@ https://tc39.es/ecma262/#sec-line-terminators
 
 いわゆる改行系の皆さんですね。
 
-## まとめ
+# まとめ
 
 というわけで、`String.prototype.trim()` で消されるのは次の文字であることがわかりました。
 
@@ -160,7 +160,7 @@ https://tc39.es/ecma262/#sec-line-terminators
 
 ここで出会って一生使うことのないかもしれない文字コードもあるかもしれませんが、勉強になりました。
 
-## 余談 / なぜ調べる必要があったか？
+# 余談 / なぜ調べる必要があったか？
 
 通常では `String.prototype.trim()` を使っていても、それが原因で特別問題になることは少ないかもしれません。
 
