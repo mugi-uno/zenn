@@ -3,7 +3,7 @@ title: "String.prototype.trim() は何をトリムするのか？"
 emoji: "✂️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["JavaScript"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
