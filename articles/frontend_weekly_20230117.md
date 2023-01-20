@@ -24,7 +24,7 @@ https://2022.stateofjs.com/en-US/
 毎年恒例 The State of JS の 2022 版が公開されました。
 
 React や Next.js がより安定感強く利用されているような結果が出ていました。
-昨年と比較し、ビルドツールでは Webpack が少し後退しているのに対し、Vite は興味・利用実績ともに上昇しています。
+昨年と比較し、ビルドツールでは webpack が少し後退しているのに対し、Vite は興味・利用実績ともに上昇しています。
 
 知らない API・ライブラリを知る機会にもなるので、一度目を通しておくと良いかもしれません。
 
@@ -34,7 +34,7 @@ https://vercel.com/blog/the-turbopack-vision
 
 Next.js 13 でアルファ版が同梱された Turbopack についての記事です。
 
-Webpack が抱えていた課題に加え、Turbopack が何を解決するのか、今後の展望などについて述べられています。
+webpack が抱えていた課題に加え、Turbopack が何を解決するのか、今後の展望などについて述べられています。
 ロードマップは https://turbo.build/pack/docs/roadmap にあるそうです。
 
 ## CS Tool のフロントエンドのリプレイスプロジェクトについて | メルカリエンジニアリング
