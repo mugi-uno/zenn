@@ -100,7 +100,7 @@ publint では npm パッケージを publish する前の段階で package.json
 
 ---
 
-フロントエンドエキスパートチームでは毎月最終火曜の 17 時から Frontend Monthly というイベントを Youtube Live で開催しています。
+フロントエンドエキスパートチームでは毎月最終火曜の 17 時から Frontend Monthly というイベントを YouTube Live で開催しています。
 その月のフロントエンド注目ニュースやゲストを呼んでの対談などフロントエンドに関する発信をしていますので是非どうぞ！
 https://www.youtube.com/playlist?list=PLPTndynQK4dxLZFEZgOZjt_zKG-0JWoWy
 
