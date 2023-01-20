@@ -3,7 +3,7 @@ title: "The State of JS 2022 公開など : Cybozu Frontend Weekly (2023-01-17�
 emoji: "⛄️"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
