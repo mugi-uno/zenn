@@ -124,9 +124,8 @@ OSS を少しでも使ったことがある方であれば、ぜひ一度ご自�
 
 https://shopify.engineering/javascript-in-webassembly-for-shopify-functions
 
-Shopify がバックエンドロジックのカスタマイズのために提供する [Shopify Functions](https://shopify.dev/docs/api/functions) について、以前は Rust を推奨言語としていましたが、新たに JavaScript をサポートすると発表されました。
-
-動作するための実体は WebAssembly/WASI であり、JavaScript で書かれた Shopify Functions を動作させるために用いられている、[Javy](https://github.com/Shopify/javy)や[QuickJS](https://bellard.org/quickjs/)についても言及されています。
+Rust を用いて Shopify のバックエンドロジックをカスタマイズするための Shopify Functions が、新たに JavaScript をサポートするようです。
+この記事では、既存 Shopify Functions の動作環境における安全性を損なわずに JavaScript を取り込むための JavaScript ランタイム Javy やその設計意図について深掘りされています。
 
 ## Improved type safety in Storybook 7
 
