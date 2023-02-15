@@ -51,7 +51,9 @@ https://twitter.com/acdlite/status/1623353741750546439
 
 React.js のコアチームメンバーである Andrew Clark 氏 ([@acdlite](https://twitter.com/acdlite)) が、Vercel に入社したとのことです。
 
-社内からは「Meta 社との関わりはどんな感じになるのだろう？」という疑問があがっていました。
+引き続き OSS を通じて React チームには所属し、60%は従来通りの作業をしつつ、残りの 40%で Next.js など Vercel に関する作業に取り組むとのことです。
+
+社内からは、「Meta 社と Vercel 社の関係性はどういう感じなんだろう？」という疑問が出ていました。
 
 ## ヤフーショッピングのフロントエンドを支える共通配信技術
 
