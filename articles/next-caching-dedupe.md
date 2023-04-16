@@ -128,7 +128,6 @@ export const fetchData = async () => {
   const { data } = await res.json();
   return data;
 };
-
 ```
 
 すると、単一のリクエスト上では fetch() の重複は排除されていますが、リロードすると再度 API が実行されることが確認できます。
@@ -137,6 +136,34 @@ export const fetchData = async () => {
 ![](/images/next-caching/dedupe-no-store.gif)
 
 つまり、fetch() 自体の cache 設定と Automatic fetch() Request Deduping の動作は干渉せず、仮に `no-store` でキャッシュを無効化していたとしても、fetch() の重複排除は動作するようです。
+
+## 場所によって `cache` オプションの指定を変えたらどうなるか
+
+※2023/04/16 追記
+
+上記のサンプルでは、すべての fetch() に対して `no-store` を付与しました。では、特定の箇所で限定的に `no-store` が付与された場合にはどうなるでしょうか？
+
+fetch() のオプションの外部から渡せるようにしてみます。
+
+```ts:APIコール関数
+export const fetchData = async (init?: RequestInit) => {
+  const res = await fetch("http://localhost:3001/sample-api", init);
+  const { data } = await res.json();
+  return data;
+};
+```
+
+そして、階層構造上の中間にある `app/bar/layout.tsx` にのみ `no-store` を指定して確認してみると、`no-store` が指定されている箇所を境目に動作が変わることがわかります。※確認のためリロードを繰り返しています
+
+![](/images/next-caching/dedupe-one-no-store.gif)
+
+`app/bar/layout.tsx` より上の階層に存在する `app/foo/layout.tsx` と `app/layout.tsx` での fetch() では `cache` オプションを指定していませんが、`no-store` を指定したときと同様、リロード時に都度 API が実行されています。ただ、その２階層のみを対象に deduping の対象にもなっています。
+
+また、`app/bar/layout.tsx` より下の階層である `app/bar/page.tsx` では、`force-cache` が有効になっており、リロードしても API は実行されずキャッシュから値が返されています。
+
+少し不思議な挙動ですね..
+
+（※なぜこのような挙動になるのかは把握しきれていません。ドキュメントやコードを別途追ってみる必要がありそうです。）
 
 # fetch() が利用できない場合
 
