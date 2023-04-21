@@ -86,7 +86,7 @@ export default async function Bar() {
 
 ![](/images/next-caching/revalidate-3.gif)
 
-しかし、beta 版のドキュメント^[https://beta.nextjs.org/docs/api-reference/fetch#optionsnextrevalidate]には次の記述があります。
+しかし、beta 版のドキュメント^[[https://beta.nextjs.org/docs/api-reference/fetch#optionsnextrevalidate](https://beta.nextjs.org/docs/api-reference/fetch#optionsnextrevalidate)]には次の記述があります。
 
 > As a convenience, it is not necessary to set the cache option if revalidate is set to a number since 0 implies cache: 'no-store' and a positive value implies cache: 'force-cache'.
 
@@ -103,7 +103,7 @@ export default async function Bar() {
 
 fetch() 単位ではなく、ページ単位での revalidate も指定可能です。
 
-App Router では、**Route Segment Config**^[https://beta.nextjs.org/docs/api-reference/segment-config#revalidate]という仕組みで、レイアウトあるいはページから特定の変数を export すると動作をカスタマイズできます。
+App Router では、**Route Segment Config**^[[https://beta.nextjs.org/docs/api-reference/segment-config](https://beta.nextjs.org/docs/api-reference/segment-config)]という仕組みで、レイアウトあるいはページから特定の変数を export すると動作をカスタマイズできます。
 
 そのうちの一つの値に `revalidate` が用意されており、デフォルトの ravalidate 期間を指定できます。
 
@@ -141,7 +141,7 @@ fetch()のオプションと Route Segment Config のそれぞれで revalidate 
 
 では、両方を指定したらどうなるでしょうか？
 
-ドキュメント内の Route Segment Config - revalidate の説明^[https://beta.nextjs.org/docs/api-reference/segment-config#revalidate]を見てみると、次の記述があります。
+ドキュメント内の Route Segment Config - revalidate の説明^[[https://beta.nextjs.org/docs/api-reference/segment-config#revalidate](https://beta.nextjs.org/docs/api-reference/segment-config#revalidate)]を見てみると、次の記述があります。
 
 > Set the default revalidation time for a layout or page. This option does not override the revalidate value set by individual fetch requests.
 
