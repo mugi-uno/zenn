@@ -7,6 +7,12 @@ published: true
 publication_name: "cybozu_frontend"
 ---
 
+Next.js 13 App Router の cache 周りを理解したい記事シリーズです。
+
+1. Automatic fetch() Request Deduping ← この記事
+1. [revalidate](https://zenn.dev/cybozu_frontend/articles/next-caching-revalidate)
+1. fetchCache (後日公開)
+
 # Next.js 13 App Router の cache はむずかしい
 
 Next.js 13 以降 [App Router](https://beta.nextjs.org/docs/app-directory-roadmap) と呼ばれる、`app/` ディレクトリを起点とする新たなレイアウト・レンダリング機能が導入されました。

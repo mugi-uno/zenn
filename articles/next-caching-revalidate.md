@@ -7,10 +7,11 @@ published: true
 publication_name: "cybozu_frontend"
 ---
 
-Next.js 13 App Router の cache 周りを理解したい記事の第二弾です。
+Next.js 13 App Router の cache 周りを理解したい記事シリーズです。
 
-前回:
-https://zenn.dev/cybozu_frontend/articles/next-caching-dedupe
+1. [Automatic fetch() Request Deduping](https://zenn.dev/cybozu_frontend/articles/next-caching-dedupe)
+1. revalidate ← この記事
+1. fetchCache (後日公開)
 
 # Incremental Static Regeneration / ISR
 
