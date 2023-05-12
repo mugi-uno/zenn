@@ -81,9 +81,9 @@ https://github.com/facebook/react/blob/16d053d592673dd5565d85109f259371b23f87e8/
 
 https://nodejs.org/api/async_context.html
 
-`AsyncLocalStorage` は Node.js で利用可能な API で、これを利用すると非同期操作・Promise Chain などが含まれていてもメモリセーフに状態管理を行えます。
+`AsyncLocalStorage` は Node.js で利用可能な API で、これを利用すると非同期操作・Promise Chain を含む一貫の処理内で閉じたコンテキストを生成し、外部から干渉されることなく状態管理を行えます。
 
-[`AsyncLocalStorage#run()`](https://nodejs.org/api/async_context.html#asynclocalstoragerunstore-callback-args)経由でコールバックを実行すると、第一引数として与えた Store はスレッドローカルに扱われます。
+[`AsyncLocalStorage#run()`](https://nodejs.org/api/async_context.html#asynclocalstoragerunstore-callback-args)経由でコールバックを実行すると、第一引数として与えた Store はコンテキスト内からのみアクセス可能となります。
 
 では、この `run()` はどこで呼ばれているのでしょうか？
 
@@ -113,7 +113,7 @@ https://github.com/facebook/react/blob/16d053d592673dd5565d85109f259371b23f87e8/
 長くなりましたが、整理すると次のような流れのようです。
 
 - Next.js App Router でリクエストごとのレンダリング時に `renderToReadableStream` が呼ばれる
-- `renderToReadableStream` 内で `AsyncLocalStorage#run()` を実行し、キャッシュ用の Map がスレッドローカルで利用可能になる
+- `renderToReadableStream` 内で `AsyncLocalStorage#run()` を実行し、キャッシュ用の Map がコンテキスト内部で利用可能になる
 - `cache()` 実行時は、`AsyncLocalStorage` 経由で Map を取得しキャッシュを管理する
 
 `AsyncLocalStorage` をフル活用している感じですね。
