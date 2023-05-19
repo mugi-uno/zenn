@@ -16,6 +16,8 @@ https://chakra-ui.com/
 
 そんな Chakra UI ですが、2023/3/27 に、"The future of Chakra UI" というタイトルで、Chakra UI が今後どういう方向性で進んでいくのかを紹介する記事が公開されました。
 
+https://www.adebayosegun.com/blog/the-future-of-chakra-ui
+
 CSS の Zero runtime 化を目指す部分（通称 Panda）が特に注目されていた印象ですが、同じ記事内で、**Zag.js** というライブラリが紹介されていました。
 
 # Zag.js？
