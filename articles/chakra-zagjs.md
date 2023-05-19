@@ -3,7 +3,7 @@ title: "Chakra が提供する Zag.js でアクセシブルなコンポーネン
 emoji: "📈"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["chakraui", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
