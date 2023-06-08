@@ -11,13 +11,15 @@ publication_name: "cybozu_frontend"
 
 Next.js 13.4 から、Next.js App Router で利用可能な新しい API として `revalidatePath` と `revalidateTag` の２つが追加されました。
 
+https://nextjs.org/docs/app/api-reference/functions/revalidatePath
+
 https://nextjs.org/docs/app/api-reference/functions/revalidateTag
 
-App Router ではない Pages Router のときでも任意タイミングでの revalidate のために On-demand ISR という方法が可能でしたが、これは revalidate 用にエンドポイントを用意した上で、特定パスの revalidate を行うというものでした。これで事足りるケースもありますが、App Router ではセグメントや fetch 単位でキャッシュ制御を行うため、revalidate においても `revalidatePath` `revalidateTag` を用いることで、より柔軟に対応できます。
+以前（Pages Router）からも任意タイミングでの revalidate のために On-demand ISR という手法が可能でしたが、これは revalidate 用にエンドポイントを用意した上で、特定パスの revalidate を行うというものでした。App Router ではセグメントや fetch 単位でキャッシュ制御を行うため、revalidate においても `revalidatePath` `revalidateTag` を用いることで、より柔軟に対応できます。
 
 # revalidatePath の動きをみてみる
 
-`revalidatePath` や `revalidateTag` は、それ単体では指定したタグやパスに対して revalidate を行うというシンプルなものです。
+`revalidatePath` や `revalidateTag` は、それ単体では指定したパスやタグに対して revalidate を行うというシンプルなものです。
 
 まずは `revalidatePath` の動きを見てみましょう。
 
@@ -42,7 +44,7 @@ export async function GET(request: NextRequest) {
 
 ![](/images/sa-revalidate/revalidatepath.gif)
 
-`revalidatePath` に指定したパスだけが適切に revalidate されていることがわかります。また、Root のレイアウトは共通であるため、いずれかで revalidate されると、もう一方のページでも最新化されます。Pages Router のときの On-demand ISR と似たような体験ですね。
+少しわかりづらいですが、`revalidatePath` に指定したパスだけが適切に revalidate されています。また、Root のレイアウトは共通であるため、いずれかで revalidate されると、もう一方のページでも最新化されます。Pages Router のときの On-demand ISR と似たような体験ですね。
 
 # revalidateTag の動きをみてみる
 
@@ -77,9 +79,9 @@ export async function GET(request: NextRequest) {
 }
 ```
 
-指定したタグに応じてピンポイントで revalidate できていることがわかります。
+この Route Handler にアクセスしてみると、指定したタグに応じてピンポイントで revalidate できていることがわかります。
 
-![](/images/sa-revalidate/revalidatepath.gif)
+![](/images/sa-revalidate/revalidatetag.gif)
 
 パスではなくクエリ単位となるため、中間に位置するレイアウトなどを対象もできるのが `revalidatePath` とは大きく違うところですね。
 
@@ -87,4 +89,79 @@ export async function GET(request: NextRequest) {
 
 上記のサンプルでは Route Handler から `revalidatePath` `revalidateTag` を呼び出していますが、Next.js 13.4 から同じくアルファ機能として追加された Server Actions からも呼び出すことができます。
 
-Server Actions から呼び出した場合、Router Handler 経由での呼び出しとは異なり、**いま現在表示している画面内の要素に対して revalidate に応じた更新を行う**ことができます。
+Server Actions と `revalidatePath` `revalidateTag` を組み合わせると、**いま現在表示している画面に対して revalidate に応じた更新を行う**ことができます。
+
+具体的に見てみましょう。
+
+ルートレイアウト - レイアウト - ページ の構成とし、それぞれで API を別の `tags` を付与して fetch() 実行し描画します。ページは `/action` とし `tags` は次の通り指定します。
+
+- Root レイアウト : `['root']`
+- `/action` レイアウト : `['layout']`
+- `/action` ページ: `['page']`
+
+そして、`/aciton` ページで Server Actions を実行する Server Component を描画します。Server Actions では、`'layout'` タグを対象に `revalidateTag` を呼び出します。コードは次の通りです。
+
+```tsx:ActionComponent.tsx
+import { revalidateTag } from "next/cache";
+
+export const ActionComponent = () => {
+  async function action() {
+    "use server";
+
+    revalidateTag("layout");
+  }
+
+  return (
+    <form action={action}>
+      <button
+        type="submit"
+        className="p-2 border-gray-400 bg-white border rounded"
+      >
+        Submit Action
+      </button>
+    </form>
+  );
+};
+```
+
+すると、次のような表示となります。
+
+![](/images/sa-revalidate/sa-default.png)
+
+そしてこの状態で Submit ボタンを押してみると...
+
+![](/images/sa-revalidate/sa-revalidatetag.gif)
+
+クリックするたびに Layout (`/action` のレイアウト) が更新されています。また、フルリロードはしておらず、React Server Components によって、差分のみが再描画されていることがわかります。
+
+Route Handlers 経由で `revalidateTag` `revalidatePath` を呼び出した際は、該当のページに対して次回アクセスした際にキャッシュを最新化する動作になりますが、Server Actions の場合、今見ているページが即座に更新されているのが大きく違う点になりそうです。
+
+## 使い道
+
+ではどういったときに役に立つの？という話ですが、具体的な利用ケースをイメージするとわかりやすいかもしれません。
+
+たとえば、アプリケーションのヘッダーにログインユーザーの名前が常に表示されており、それを設定画面で更新するケースを想定してみましょう。GitHub の Settings のようなページをイメージすると良いかもしれません。
+
+![](/images/sa-revalidate/sa-sample.png)
+
+このとき、次の要件の実装が必要だと仮定します。
+
+- Name を更新できるが、更新時には画面遷移はせずに留まる
+- 更新後は右上のメニュー内に表示されている Name も最新化する
+
+これを Server Actions なしで実装しようとすると、メニューの更新処理が少し手間になります。
+
+更新用のフォームとヘッダーをそれぞれコンポーネントとして組んでいくと、コンポーネントツリー上での位置関係が遠い存在になることが多いはずです。しかし、ヘッダー側を何らかの方法で最新化しなければなりません。いくつか方法が考えられます。
+
+- Context を使う
+- 何らかの状態管理ライブラリで連携させる
+- React Query などを利用し、キャッシュを破棄する
+- pub/sub のような仕組みでイベントを通知してヘッダー側で拾う
+
+いずれにしても、それなりにコストがかかりますし、このためだけにライブラリを入れるのもな...という気持ちにもなりますね。
+
+これが Server Actions の場合、たとえばヘッダー側でのデータ取得用 fetch() 時に `"userData"` というタグを付与しておけば、更新処理の Server Actions 側で `revalidateTag("userData")` を呼び出すだけで自動的にヘッダーも更新できます。とても簡単ですね。
+
+ただ、いたるところでこの操作を自由に行うと、操作に対してどこが更新されるのかが追えなくなる可能性も抱えていそうです。タグは整理して型付けしておくなど、無秩序にならないための工夫は必要になるかもしれません。
+
+しかし、うまく使えば非常に効率的にアプリケーションを構築していけるポテンシャルは持っているように感じます。Server Actions は 2023/06/08 現在ではまだアルファ版ですが、個人的にはとても期待しています。
