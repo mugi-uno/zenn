@@ -3,7 +3,7 @@ title: "Next.js Server Actions の裏側を理解したくて動きとコード�
 emoji: "🕵️‍♀️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Next.js", "フロントエンド", "React"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
