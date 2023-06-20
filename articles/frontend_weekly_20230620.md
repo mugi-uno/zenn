@@ -3,7 +3,7 @@ title: "Panda CSS リリースなど : Cybozu Frontend Weekly (2023-06-20号)"
 emoji: "☂️"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
