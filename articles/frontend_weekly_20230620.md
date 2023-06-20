@@ -21,7 +21,7 @@ publication_name: "cybozu_frontend"
 
 https://github.com/typescript-eslint/typescript-eslint/discussions/7103
 
-プロジェクトの貢献のレベルをやそれに応じた報酬などが明確に定義されています。貢献の種類に応じてポイントが割り振られ、保有しているポイントに応じて報酬や、逆に期待される稼働率などが記載されています。似た事例では、Rspack でも Governance を[公開している](https://github.com/web-infra-dev/rspack/blob/main/GOVERNANCE.md)ようです。
+プロジェクトへの貢献のレベルやそれに応じた報酬などが明確に定義されています。貢献の種類に応じてポイントが割り振られ、保有しているポイントに応じて報酬や、逆に期待される稼働率などが記載されています。似た事例では、[ESLint](https://eslint.org/docs/latest/contribute/governance) や [Astro](https://github.com/withastro/.github/blob/main/GOVERNANCE.md) などでも Governance を公開しているようです。
 
 ## Panda CSS
 
@@ -73,7 +73,7 @@ https://developer.chrome.com/blog/topics-enhancements/
 
 https://wasmer.io/posts/announcing-wasmer-edge
 
-WebAssembly・Wasmer を利用したアプリケーションの分散デプロイ可能なプラットフォームです。既存のクラウドサービスとの比較を踏まえたメリットも記事内で解説されています。現状は Rust ベースのアプリケーションのみ対応していますが、将来的には Flask・Django・Wordpres・Rails・Node などにも対応予定とのことです。
+WebAssembly・Wasmer を利用したアプリケーションの分散デプロイ可能なプラットフォームです。既存のクラウドサービスとの比較を踏まえたメリットも記事内で解説されています。現状は Rust ベースのアプリケーションのみ対応していますが、将来的には Flask・Django・WordPress・Rails・Node などにも対応予定とのことです。
 
 ## clip-path での三角形の作り方
 
