@@ -3,7 +3,7 @@ title: "Panda CSS - Chakra UI の Zero Runtime CSS フレームワーク"
 emoji: "🐼"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Panda", "CSS", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
@@ -275,3 +275,180 @@ function App() {
 Pattern を独自定義する際には、デフォルトの Pattern を継承したり、拒否するプロパティを指定したりできます。それほど難しくないため、興味があればドキュメントを確認してみてください。
 
 https://panda-css.com/docs/customization/patterns
+
+## Recipes / レシピ
+
+「ボタン」「メニュー」「ダイアログ」といったコンポーネントのスタイリングなど、特定の用途のパーツに関しての基本的なスタイルは共通化を行いたいケースが多いです。Design System を構築するケースなどでは必須になるでしょう。
+
+こういった場合、Panda では Recipes という形でスタイルを定義できます。サイズとタイプをそれぞれ２パターン持つボタンのスタイルを定義してみましょう。
+
+```ts:button.css.ts
+import { cva } from "../styled-system/css";
+
+export const button = cva({
+  base: {
+    display: "flex",
+    borderWidth: "1px",
+    borderColor: "gray",
+  },
+  variants: {
+    type: {
+      default: { color: "gray" },
+      danger: { color: "red", borderColor: "red" },
+    },
+    size: {
+      small: { padding: "8px", fontSize: "12px" },
+      large: { padding: "16px", fontSize: "16px" },
+    },
+  },
+  defaultVariants: {
+    type: "default",
+    size: "small",
+  },
+});
+```
+
+タイプとして "default" と "danger" の２つと、サイズも "small" と "large" の２つを定義しています。指定しなかった場合のデフォルト値は タイプが "default" でサイズは "small" になるよう定義しています。なお、もちろんこれらの定義もすべて型安全に書いていけます。
+
+![](/images/panda/recipe-safe.png)
+
+実際にコンポーネントから利用してみます。
+
+```tsx
+import { hstack } from "../styled-system/patterns";
+import { button } from "./button.css";
+
+function App() {
+  return (
+    <>
+      <div className={hstack({ gap: "8px", padding: "16px" })}>
+        <button className={button({ size: "small", type: "default" })}>
+          Button
+        </button>
+        <button className={button({ size: "large", type: "default" })}>
+          Button
+        </button>
+        <button className={button({ size: "small", type: "danger" })}>
+          Button
+        </button>
+        <button className={button({ size: "large", type: "danger" })}>
+          Button
+        </button>
+        <button className={button()}>Button</button>
+      </div>
+    </>
+  );
+}
+```
+
+![](/images/panda/recipe.png)
+
+それぞれのプロパティが適用されてスタイリングできていますね。
+
+なお、DesignSystem で作成したコンポーネントなどで利用する場合には、実際にはこれらの値は Props として受け取りたいケースが出てくると思います。そういった場合でも、`RecipeVariantProps` を利用することで型だけ抽出することができます。
+
+```tsx
+import { ReactNode } from "react";
+import { RecipeVariantProps } from "../styled-system/css";
+import { button } from "./button.css";
+
+type Props = {
+  children: ReactNode;
+} & RecipeVariantProps<typeof button>;
+
+export const Button = ({ children, ...recipeVariantProps }: Props) => {
+  <button className={button(recipeVariantProps)}>{children}</button>;
+};
+```
+
+```tsx
+import { Button } from "./Button";
+
+function App() {
+  return (
+    <Button size="small" type="default">
+      Button
+    </Button>
+  );
+}
+```
+
+スタイリングに必要な分岐をきれいに Panda での定義側にすべて分離できるのが嬉しいポイントですね。
+
+## JSX Style Props / JSX との統合
+
+ここまで紹介したものはすべて基本的に Panda 経由で生成された class を`className` に適用する形でスタイリングを行っていました。加えて、Panda ではそれらすべてを JSX のプロパティとしても利用することができます。
+
+利用するには、panda.config.ts に jsxFramework オプションを追加し、対応するフレームワークを指定します。
+
+```ts:panda.config.ts
+export default defineConfig({
+  ...
+  jsxFramework: 'react'
+})
+```
+
+すると、`styled.xxx` の形で、任意の JSX 要素を作成可能になります。また、Patterns に関しても同名のコンポーネントが利用できます。
+
+```tsx
+import { VStack, styled } from "../styled-system/jsx";
+
+function App() {
+  return (
+    <VStack gap="8px">
+      <styled.a href="https://example.com" color="red">
+        Link
+      </styled.a>
+      <styled.button type="button" color="blue">
+        Button
+      </styled.button>
+    </VStack>
+  );
+}
+
+export default App;
+```
+
+`<styled.a>` などを見てみると、`<a>` 要素としての `href` を受け取りつつ、スタイル用の `color` も受け取れていますね。実際画面で確認してみても、正しく `<a>` タグで描画されつつスタイルが適用されています。
+
+![](/images/panda/jsx1.png)
+
+また、`styled` 自体を関数としても実行可能で、それを利用して JSX スタイルでの Recipes を作成することもできます。さきほどの Recipes の例で作成した Button コンポーネントとまったく同様のものは、次の形で定義できます。
+
+```tsx:Button.tsx
+import { styled } from "../styled-system/jsx";
+
+export const Button = styled("button", {
+  base: {
+    display: "flex",
+    borderWidth: "1px",
+    borderColor: "gray",
+  },
+  variants: {
+    type: {
+      default: { color: "gray" },
+      danger: { color: "red", borderColor: "red" },
+    },
+    size: {
+      small: { padding: "8px", fontSize: "12px" },
+      large: { padding: "16px", fontSize: "16px" },
+    },
+  },
+  defaultVariants: {
+    type: "default",
+  },
+});
+```
+
+この場合は最初からコンポーネントとして成立しているため、`RecipeVariantProps` を利用しなくても Props も最初から適切に受け取ることができます。
+
+Chakra UI などではスタイリング用のプロパティをコンポーネントで受け取る形になっていますが、それに近いことを簡単に独自のコンポーネントで実現できるイメージです。
+
+# 所感
+
+触ってみた感触としては、かなり体験が良かったです。個人的に Tailwind は好きな方でしたが、よく問題点として挙げられる "class 定義が非常に煩雑になる" "型安全ではない" といった点は気になるポイントでした。Panda CSS ではそれらの課題を解決しつつも、Atomic CSS の恩恵を受けられるのは大きいメリットに感じました。この記事では紹介していませんが、デフォルトで [Design Tokens の定義もサポート](https://panda-css.com/docs/theming/tokens)しているのも大きく、Design System を構築する際などにも恩恵を受けられそうです。
+また、className に独自で付与する方法と JSX スタイルで記述する方法のどちらも利用できるのはとても嬉しいポイントに感じます。チームの好みによって使い分けることができますし、元々使っていたフレームワークに応じて、体験が近い方を選択できるのはとても良さそうです。
+
+一方で、独自での記法になってしまうのは避けられない点です。型安全にする以上はやむを得ない部分になると思っていますが、できる限り純粋な CSS に近い形で書くのが好みな場合は適さず、CSS Modules などを利用したほうが望ましいかもしれません。
+
+これは完全に個人の意見ですが、これから採用するプロダクトは増えていくのではないかなと思いました。がんばれパンダ！
