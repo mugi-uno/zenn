@@ -145,8 +145,6 @@ export const fetchData = async () => {
 
 ## 場所によって `cache` オプションの指定を変えたらどうなるか
 
-※2023/04/16 追記
-
 上記のサンプルでは、すべての fetch() に対して `no-store` を付与しました。では、特定の箇所で限定的に `no-store` が付与された場合にはどうなるでしょうか？
 
 fetch() のオプションの外部から渡せるようにしてみます。
@@ -170,6 +168,12 @@ export const fetchData = async (init?: RequestInit) => {
 少し不思議な挙動ですね..
 
 （※なぜこのような挙動になるのかは把握しきれていません。ドキュメントやコードを別途追ってみる必要がありそうです。）
+
+↓
+
+@koichik さんより[コメント](https://zenn.dev/cybozu_frontend/articles/next-caching-dedupe#comment-adeb96917b5764)を頂きました。ありがとうございます！
+
+途中でのリクエストで `no-store` つきの fetch() を実行したことで、headers() や cookies() のようないわゆる Dynamic Functions を実行した場合と同様、それ以降の fetch() が Dynamic 扱いに切り替わり、デフォルト値である fetchCache = 'auto' との関連でこのような挙動になるようです。
 
 # fetch() が利用できない場合
 

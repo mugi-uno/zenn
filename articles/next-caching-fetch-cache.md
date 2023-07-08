@@ -68,7 +68,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
 ![](/images/next-caching/fetch-cache-1.gif)
 
-`cookies()` の呼び出しより上位階層ではキャッシュが利用されていないことがわかります（レンダリングの順番としては下位階層から描画されるため、`fetch()` の呼び出しも下位階層のほうが先となります）。
+`cookies()` の呼び出しより上位階層ではキャッシュが利用されていないことがわかります（下位階層のコンポーネントから実行が開始されるため、`fetch()` の呼び出しも下位階層のほうが先となります）。
 
 これが `fetchCache` 理解の前提となる Dynamic Functions と `fetch()` の挙動です。
 
