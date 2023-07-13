@@ -17,6 +17,9 @@ https://www.prisma.io/blog/introducing-pulse-jtu4UPC8ujy4
 
 何となく申し込んでいた Early Access への招待が届いたので、実際に試してみました。
 
+> Early Access 中なので、パブリックな記事を書いていいのか不安でしたが、
+> Prisma 側に確認したところ「問題ないよ！」との回答を頂きました。ありがとうございます。
+
 ### 現状の制約
 
 Early Access 段階では次の条件を満たす必要があるようです。
