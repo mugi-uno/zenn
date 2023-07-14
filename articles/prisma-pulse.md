@@ -1,9 +1,9 @@
 ---
-title: "Prisma Pulse を触ってみた"
+title: "Prisma Pulse でデータ更新をリアルタイムで検知する"
 emoji: "🔊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Prisma"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
@@ -15,7 +15,7 @@ https://www.prisma.io/blog/introducing-pulse-jtu4UPC8ujy4
 
 対応するデータベースの変更を検知し、リアルタイムで変更を通知するためのサービスとのことです。
 
-何となく申し込んでいた Early Access への招待が届いたので、実際に試してみました。
+申し込んでいた Early Access への招待が届いたので、実際に試してみました。
 
 > Early Access 中なので、パブリックな記事を書いていいのか不安でしたが、
 > Prisma 側に確認したところ「問題ないよ！」との回答を頂きました。ありがとうございます。
