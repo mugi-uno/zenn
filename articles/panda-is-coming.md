@@ -2,7 +2,7 @@
 title: "Panda CSS - Chakra UI の Zero Runtime CSS フレームワーク"
 emoji: "🐼"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Panda", "CSS", "フロントエンド"]
+topics: ["PandaCSS", "CSS", "フロントエンド"]
 published: true
 publication_name: "cybozu_frontend"
 ---
