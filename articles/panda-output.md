@@ -3,7 +3,7 @@ title: "Panda CSS の出力結果から注意点を学ぶ"
 emoji: "🎋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["PandaCSS", "CSS", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
