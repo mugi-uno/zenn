@@ -3,7 +3,7 @@ title: "CSS Custom Highlight API でのテキストハイライト"
 emoji: "🖍️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["CSS", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
