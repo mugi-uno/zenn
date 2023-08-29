@@ -61,7 +61,7 @@ https://2023.stateofcss.com/en-US/
 
 https://github.com/facebook/react/pull/25243
 
-"Float" と呼ばれる、React でのリソース読み込みに関する PR がマージされました。React 自体でのスタイルシートのプリロードや重複排除に加え、それらをコントロールするための新しい API が ReactDOM にも追加されています。
+"Float" と呼ばれる、React でのリソース読み込みに関する PullRequest です（PullRequest 自体は 2022 年にマージされています）。React 自体でのスタイルシートのプリロードや重複排除に加え、それらをコントロールするための新しい API が ReactDOM にも追加されており、React を利用している場合のフロントエンド周りでのリソースファイルの取り扱いにいずれ影響を与えるかもしれません。
 
 ## Next.js App Router のドキュメントに Form Validation・Error Handling の項目が追加
 
