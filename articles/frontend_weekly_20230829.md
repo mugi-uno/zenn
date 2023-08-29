@@ -3,7 +3,7 @@ title: "State of CSS 2023 の結果公開など : Cybozu Frontend Weekly (2023-0
 emoji: "🍉"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
