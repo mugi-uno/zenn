@@ -1,6 +1,6 @@
 ---
 title: "Next.jsでServer Componentsがちょっとだけテストできるようになってた"
-emoji: "🚚"
+emoji: "🐤"
 type: "tech"
 topics: ["nextjs", "フロントエンド"]
 published: false
