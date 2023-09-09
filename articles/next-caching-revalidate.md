@@ -2,7 +2,7 @@
 title: "Next.js 13 の cache 周りを理解する - revalidate"
 emoji: "🚚"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Next.js", "フロントエンド"]
+topics: ["nextjs", "フロントエンド"]
 published: true
 publication_name: "cybozu_frontend"
 ---

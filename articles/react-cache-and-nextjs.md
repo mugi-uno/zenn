@@ -2,7 +2,7 @@
 title: "React cache() で Next.js の Per-request Caching が実現できるのはなぜか"
 emoji: "🐑"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Next.js", "フロントエンド", "React"]
+topics: ["nextjs", "フロントエンド", "React"]
 published: true
 publication_name: "cybozu_frontend"
 ---

@@ -2,7 +2,7 @@
 title: "Next.js Server Actions でのエラー周りの挙動を確認する"
 emoji: "💥"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Next.js", "フロントエンド", "React"]
+topics: ["nextjs", "フロントエンド", "React"]
 published: true
 publication_name: "cybozu_frontend"
 ---
