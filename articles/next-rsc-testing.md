@@ -16,7 +16,7 @@ https://twitter.com/leeerob/status/1698758756924825723
 
 なんと `next@canary` で、Server Components の Jest でのテスト実行がサポートされているとのことです！これは試さないと！
 
-## 現時点(2023/09/08)での Server Components テストの課題
+## next@13.4.19 時点での Server Components テストの課題
 
 Next.js App Router で開発するときの大きな課題の一つがテストで、現状では Server Components と testing-library を組み合わせたテストにはかなり制限があります。
 
