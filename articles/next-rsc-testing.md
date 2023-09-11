@@ -3,7 +3,7 @@ title: "Next.jsでServer Componentsがちょっとだけテストできるよう
 emoji: "🐤"
 type: "tech"
 topics: ["nextjs", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
