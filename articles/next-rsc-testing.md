@@ -28,7 +28,7 @@ Server Components を用いた開発をしていると、バックエンド向�
 
 https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#keeping-server-only-code-out-of-the-client-environment
 
-一方、Next.js でのコンポーネントを Jest でテストする際は、`next/jest` を用いると、SWC を利用した Rust Compiler を利用できます。
+一方、Next.js でのコンポーネントを Jest でテストする際は、`next/jest` を用いると、Rust Compiler (SWC) を利用できます。
 https://nextjs.org/docs/pages/building-your-application/optimizing/testing#setting-up-jest-with-the-rust-compiler
 
 しかし、testing-library などを使うために Jest の testEnvironment を `jest-environment-jsdom` とすると、現状ではすべてのコンポーネントが Client Component として処理されてしまい、先述の `server-only` チェックの結果でビルドエラーが発生し、テストが実行できません。
