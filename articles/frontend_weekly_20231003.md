@@ -48,7 +48,7 @@ DB へのコネクションを提供するサービスである Hyperdrive が�
 
 https://twitter.com/Una/status/1706777335762997283
 
-OpenUI で仕様策定中の `<selectlist>` 要素に関するサンプル実装です。スタイリングを伴うドロップダウンを提供する際、従来では独自実装するしかありませんでしたが、`<selectlist>` を用いるとブラウザ標準機能として使えるようになります。
+OpenUI で仕様策定中の `<selectlist>` 要素に関するサンプル実装です。スタイリングを伴うドロップダウンを提供する際、従来では独自実装するしかありませんでしたが、`<selectlist>` を用いるとブラウザ標準機能として使えるようになります。ポストで紹介されている codepen は、Chrome Canary で experimental-web-platform-features を有効にすることで実際に確認できます。
 
 ## `<select>` に対して showPicker を実行できるように
 
