@@ -3,7 +3,7 @@ title: "Announcing Deno Queues など : Cybozu Frontend Weekly (2023-10-03号)"
 emoji: "🎑"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
