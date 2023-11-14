@@ -13,7 +13,7 @@ publication_name: "cybozu_frontend"
 
 サイボウズ社内では毎週火曜日に Frontend Weekly と題し「一週間の間にあったフロントエンドニュースを共有する会」を開催しています。
 
-今回は、2023/11/14 の Frontend Weekly で取り上げた記事や話題を紹介します。
+今回は、2023 年 11 月 14 日 の Frontend Weekly で取り上げた記事や話題を紹介します。
 
 # 取り上げた記事・話題
 
@@ -21,7 +21,7 @@ publication_name: "cybozu_frontend"
 
 https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model
 
-先日の [Next.conf](https://www.youtube.com/watch?v=gfU1iZnjRZM) でも発表された、Next.js 14 以降で Experimental 機能として利用可能な PPR (Partial Prerendering) に関する Vercel による説明記事です。
+先日の [Next.conf](https://www.youtube.com/watch?v=gfU1iZnjRZM) でも発表された、Next.js 14 以降で Experimental 機能として利用可能な PPR (Partial Prerendering) に関する Vercel による解説記事です。
 `<Suspence>` を境界に静的シェルのプリレンダリングを行うことで、静的部分を Edge 環境から高速に配信可能となります。時間・タグ・パスをベースにした revalidate にも対応しているようです。
 
 ## Partial Prerendering in Next.js 14 (Preview)
