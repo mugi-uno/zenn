@@ -21,7 +21,7 @@ publication_name: "cybozu_frontend"
 
 https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model
 
-先日の [Next.conf](https://www.youtube.com/watch?v=gfU1iZnjRZM) でも発表された、Next.js 14 以降で Experimental 機能として利用可能な PPR (Partial Prerendering) に関する Vercel による解説記事です。
+先日の [Next.conf](https://www.youtube.com/watch?v=gfU1iZnjRZM) でも発表された、Next.js 14 で Experimental 機能として利用可能な PPR (Partial Prerendering) に関する Vercel による解説記事です。
 `<Suspence>` を境界に静的シェルのプリレンダリングを行うことで、静的部分を Edge 環境から高速に配信可能となります。時間・タグ・パスをベースにした revalidate にも対応しているようです。
 
 ## Partial Prerendering in Next.js 14 (Preview)
@@ -33,10 +33,12 @@ https://www.youtube.com/watch?v=wv7w_Zx-FMU
 
 ## Rust で Prettier の 95% 以上のテストに合格すると $10k
 
+https://console.algora.io/challenges/prettier
 https://twitter.com/Vjeux/status/1722733472522142022
 
-Rust を使って Prettier の 95% 以上のテストケースをパスした場合、$10k の賞金を個人で提供する旨のツイートがされていました。
-現在は Vercel CEO の Guillermo Rauch 氏も賛同し $20k になっているようです。チャンスです！
+Rust を使って Prettier の 95% 以上のテストケースをパスした場合、$1,000 の賞金を個人で提供する旨のツイートがされていました。
+
+その後 Vercel CEO の Guillermo Rauch 氏や [Wasmer](https://wasmer.io/) も加わり、さらに WASIX へのコンパイルもサポートすることで最大で $2,500 の報奨金となるようです。チャンスです！
 
 ## CSS nesting relaxed syntax update
 
@@ -46,7 +48,7 @@ Chrome 120 以降、CSS nesting の構文が更新され、ネストした場合
 
 ## Prettier に `--experimental-ternaries` オプションが追加
 
-Prettier v3.1 以降で `--experimental-ternaries` オプションが追加され、三項演算子のフォーマットが可能になりました。
+Prettier v3.1 で `--experimental-ternaries` オプションが追加され、三項演算子のフォーマットが可能になりました。
 併せてフィードバック用の Google Forms も公開されているようです。
 
 フォーマット例
