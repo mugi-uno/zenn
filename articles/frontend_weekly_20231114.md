@@ -3,7 +3,7 @@ title: "Next.js 14 PPR の紹介など : Cybozu Frontend Weekly (2023-11-14号)"
 emoji: "🧣"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
@@ -31,14 +31,14 @@ https://www.youtube.com/watch?v=wv7w_Zx-FMU
 上記の記事に加えて PPR について、[@leerob](https://twitter.com/leeerob) 氏による解説動画です。
 実例をもとに、PPR を用いることでレンダリングの効率化を行えるケースを紹介しています。
 
-## Rust で Prettier の 95% 以上のテストに合格すると $10k
+## Rust で Prettier の 95% 以上のテストに合格すると $10,000
 
 https://console.algora.io/challenges/prettier
 https://twitter.com/Vjeux/status/1722733472522142022
 
-Rust を使って Prettier の 95% 以上のテストケースをパスした場合、$1,000 の賞金を個人で提供する旨のツイートがされていました。
+Rust を使って Prettier の 95% 以上のテストケースをパスした場合、$10,000 の賞金を個人で提供する旨のツイートがされていました。
 
-その後 Vercel CEO の Guillermo Rauch 氏や [Wasmer](https://wasmer.io/) も加わり、さらに WASIX へのコンパイルもサポートすることで最大で $2,500 の報奨金となるようです。チャンスです！
+その後 Vercel CEO の Guillermo Rauch 氏や [Wasmer](https://wasmer.io/) も加わり、さらに WASIX へのコンパイルもサポートすることで最大で $22,500 の報奨金となるようです。チャンスです！
 
 ## CSS nesting relaxed syntax update
 
