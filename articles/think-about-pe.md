@@ -2,8 +2,8 @@
 title: "現代の Progressive Enhancement について考える"
 emoji: "🚶‍♀️"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: ["フロントエンド", "React"]
-published: false
+topics: ["フロントエンド", "アクセシビリティ"]
+published: true
 publication_name: "cybozu_frontend"
 ---
 
