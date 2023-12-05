@@ -7,7 +7,7 @@ published: false
 publication_name: "cybozu_frontend"
 ---
 
-最近になって、**Progressive Enhancement（プログレッシブ・エンハンスメント）** という言葉をよく耳にします。
+最近になって、**Progressive Enhancement（プログレッシブ・エンハンスメント）** というワードを目にする機会が増えています。
 
 Remix や Next.js といったフレームワークにおいても頻繁に登場します。
 
@@ -46,10 +46,18 @@ Google などで調べると簡単に情報が出てくるので詳細な説明�
 
 主観ですが、Progressive Enhancement について調べたり話したりしていると、暗黙的に "Progressive Enhancement = JavaScript が無効化されている環境でも動く" という前提になることが多い印象です。
 
-しかし、現実的に JavaScript が完全に無効なケースはどこまで考えるべきでしょうか。たとえば、Web アクセシビリティに関するサーベイなどを行っている WebAIM の 2019 年時点の調査では、スクリーンリーダー利用ユーザーのうち、JavaScript を無効化しているユーザーの割合は全体のうちの 0.7% だったそうです。
+しかし、現実的に JavaScript が完全に無効なケースはどこまで考えるべきでしょうか。たとえば、JavaScript の利用状況に関してはさまざまな調査が行われており、いずれにしても無効化している割合はかなり小さいという結果が出ているようです。いくつか例を紹介します。
+
+Blockmetry / 2016 年時点で全世界のトラフィックの 0.2% で JavaScript が無効
+https://deliberatedigital.com/blockmetry/javascript-disabled
+
+gov.uk (イギリス政府) / 2013 年時点でイギリス政府のウェブサービス利用者のうち 1.1%が JavaScript の利用なし（明示的な無効化は 0.2%）
+https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
+
+WebAIM / 2019 年時点でスクリーンリーダー利用ユーザーのうち 0.7% が JavaScript を無効化
 https://webaim.org/projects/screenreadersurvey8/#javascript
 
-これを多いと見るか少ないと見るかは様々な前提条件によって変わりそうではあります。
+これらを多いと見るか少ないと見るかは様々な前提条件によって変わりそうではあります。
 
 ただ、Progressive Enhancement が提唱された当時は JavaScript が現在ほど活用されておらず、ブラウザの設定によって JavaScript が無効化されているシチュエーションを想定する比重は高かったのではないかと予想されます。しかし、現代においてはかなり状況が変わっており、当時の思想をそのまま適用すると少し歪みが生まれるようにも感じます。
 
