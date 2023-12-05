@@ -7,7 +7,7 @@ published: false
 publication_name: "cybozu_frontend"
 ---
 
-この記事は Cybozu Frontend Advent Calendar 2023 の 6 日目の記事です。
+この記事は [Cybozu Frontend Advent Calendar 2023](https://adventar.org/calendars/9255) の 6 日目の記事です。
 
 ---
 
