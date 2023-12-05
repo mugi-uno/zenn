@@ -9,7 +9,7 @@ publication_name: "cybozu_frontend"
 
 最近になって、**Progressive Enhancement（プログレッシブ・エンハンスメント）** という言葉をよく耳にします。
 
-モダンなフロントエンド開発で利用されるフレームワークである Remix や Next.js を利用している際にも頻繁に登場します。
+Remix や Next.js といったフレームワークにおいても頻繁に登場します。
 
 https://remix.run/docs/en/main/discussion/progressive-enhancement
 
@@ -19,7 +19,9 @@ Progressive Enhancement という概念は最近になって登場したもの�
 
 https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%AC%E3%83%83%E3%82%B7%E3%83%96%E3%82%A8%E3%83%B3%E3%83%8F%E3%83%B3%E3%82%B9%E3%83%A1%E3%83%B3%E3%83%88
 
-## Progressive Enhancement とは
+今回はこの "Progressive Enhancement" について少し考えてみたいと思います。
+
+# Progressive Enhancement とは
 
 Progressive Enhancement は特定の仕組みや機能のことではありません。設計哲学・戦略・概念、といった言葉で説明されることが多いようです。
 
@@ -103,7 +105,7 @@ https://www8.cao.go.jp/shougai/suishin/sabekai.html
 
 ユーザビリティ観点での Progressive Enhancement はどうでしょうか。
 
-書籍 [Web アプリケーションアクセシビリティ](https://gihyo.jp/book/2023/978-4-297-13366-5)では、ユーザビリティは JIS Z 8521:2020 より抜粋し次のように説明されていました。
+書籍 [Web アプリケーションアクセシビリティ](https://gihyo.jp/book/2023/978-4-297-13366-5)では、"ユーザビリティ" の定義は JIS Z 8521:2020 より抜粋し次のように説明されていました。
 
 > 特定のユーザが特定の利用状況において，システム，製品又はサービスを利用する際に，効果，効率及び満足を伴って特定の目標を達成する度合い。
 
@@ -117,23 +119,37 @@ Progressive Enhancement に基づいて実装した場合、必然的にサー�
 
 実際問題として、現代のフロントエンド開発において JavaScript を一切用いないことを前提として完全なサービス提供を行うのはかなり厳しいものがあります。
 
-ブラウザ側でも Popover API や `<selectlist>` といった新しい機能が日々追加され、従来 JavaScript が必須であった機能について、ネイティブで提供可能になるケースもあります。
+ブラウザ側でも Popover API や `<selectlist>` といった新しい機能が日々追加され、JavaScript を使わずにブラウザ自体から提供可能なものも増えつつあります。
 
 参考: JavaScript なしで動作するモダンなコードの書き方 / [@azukiazusa](https://twitter.com/azukiazusa9) さん
 https://speakerdeck.com/azukiazusa1/javascript-nasidedong-zuo-surumodannakodonoshu-kifang
 
-しかし、現実的なユースケースとしてはまだ十分出揃っているとは言えず、ほとんどのケースで何らかの実装は必要になります。また、仮に JavaScript を用いずにネイティブの機能で実現したとしても、その機能は古いブラウザではサポートされていないことも多いため、ある意味 Progressive Enhancement とは逆行する可能性も含んでいます。
+しかし、現実的なユースケースとしてはまだ十分出揃っているとは言えず、ほとんどのケースで JavaScript を用いた何らかの独自実装は必要になります。
 
-## Progressive Enhancement をどこまで追求するか？
+また、仮に JavaScript を用いずにネイティブの機能で実現したとしても、その機能は古いブラウザではサポートされていないことも多いため、ある意味 Progressive Enhancement とは逆行する可能性も含んでいます。しかし、これが Progressive Enhancement の捉え方が「SSR をしているけど、一部は Hydration 前でも動作するようにしたい！」といったものであれば有効に活用できます。
 
-実際のところ、たとえば Remix や Next.js の機能を活用することで、フォーム操作などの点において、ある程度 Progressive Enhancement に沿った形での実装は可能かと思います。
+何をしたいかによってどう実現するかも変わってきそうです。
 
-しかし、それはごく一部だけを切り取った形になります。
+## フレームワークの機能で Progressive Enhancement の対応は OK？
 
-〜ここを書く〜
+Next.js や Remix などのフレームワークが提供する機能を活用することで、フォーム操作など、ある程度 Progressive Enhancement に沿った形での実装は可能です。しかし、それで完璧かと言われるとそんなこともなく、ごく一部だけを切り取った形になってしまう可能性があります。
+
+Next.js App Router を例に挙げると、Server Actions を有効活用することで、JavaScript が無効な状態でもフォームの動作を実現できます。しかし、他の機能の大半が Client Components を用いてクライアント側での JavaScript 動作を前提とした実装であった場合、Progressive Enhancement が実現されているとは呼べない状態になります。
+
+また、先述の通り CSS なども含めて一貫した設計が必要で、フレームワークの特定の機能を使ったからオッケー！というものでもありません。
+
+順序としては、まず大前提に「サービスとして何を実現すべきなのか・実現したいのか」が存在しており、そのための手段として Progressive Enhancement が存在する、と考えたほうが良さそうです。
+
+なお、先日公開されたこちらの記事も大変参考になる内容でした。
+
+https://oisham.hatenablog.com/entry/2023/12/03/234541
+
+> つまり、 仕様自体も 0 か 1 かではなく、状況に応じた仕様の定義が必要になる と考えています。
 
 # まとめ
 
-というわけで、Progressive Enhancement について考えてみた内容を書き綴ってみました。
+少々主観の部分も含まれているため、もしかしたら間違いもあるかもしれませんが、Progressive Enhancement について考えてみた内容を書き綴ってみました。
 
-少々主観の部分も含まれているため、もしかしたら間違いもあるかもしれません。
+ライブラリやフレームワークなど、技術寄りの視点で謳われる Progressive Enhancement というワードに意識が持っていかれがちですが、実際のところは仕様や要件といった部分に大きく影響を受ける点は注意しておきたいところです。また、Web エンジニアとしてはその仕様や要件に応じて、Progressive Enhancement を実現する手段が何かは抑えておく必要はありそうだな〜と感じました。特にアクセシビリティ周りが代表的なもので、努力目標ではなく必達要件になる可能性もあるため、必須知識として求められるケースも出てくるかもしれません。
+
+むずかしい〜〜
