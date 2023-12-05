@@ -7,6 +7,10 @@ published: false
 publication_name: "cybozu_frontend"
 ---
 
+この記事は Cybozu Frontend Advent Calendar 2023 の 6 日目の記事です。
+
+---
+
 最近になって、**Progressive Enhancement（プログレッシブ・エンハンスメント）** というワードを目にする機会が増えています。
 
 Remix や Next.js といったフレームワークにおいても頻繁に登場します。
