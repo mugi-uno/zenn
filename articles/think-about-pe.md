@@ -48,14 +48,17 @@ Google などで調べると簡単に情報が出てくるので詳細な説明�
 
 しかし、現実的に JavaScript が完全に無効なケースはどこまで考えるべきでしょうか。たとえば、JavaScript の利用状況に関してはさまざまな調査が行われており、いずれにしても無効化している割合はかなり小さいという結果が出ているようです。いくつか例を紹介します。
 
-Blockmetry / 2016 年時点で全世界のトラフィックの 0.2% で JavaScript が無効
-https://deliberatedigital.com/blockmetry/javascript-disabled
+- Blockmetry
+  2016 年時点で全世界のトラフィックの 0.2% で JavaScript が無効
+  https://deliberatedigital.com/blockmetry/javascript-disabled
 
-gov.uk (イギリス政府) / 2013 年時点でイギリス政府のウェブサービス利用者のうち 1.1%が JavaScript の利用なし（明示的な無効化は 0.2%）
-https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
+- gov.uk (イギリス政府)
+  2013 年時点でイギリス政府のウェブサービス利用者のうち 1.1%が JavaScript の利用なし（明示的な無効化は 0.2%）
+  https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
 
-WebAIM / 2019 年時点でスクリーンリーダー利用ユーザーのうち 0.7% が JavaScript を無効化
-https://webaim.org/projects/screenreadersurvey8/#javascript
+- WebAIM
+  2019 年時点でスクリーンリーダー利用ユーザーのうち 0.7% が JavaScript を無効化
+  https://webaim.org/projects/screenreadersurvey8/#javascript
 
 これらを多いと見るか少ないと見るかは様々な前提条件によって変わりそうではあります。
 
