@@ -1,5 +1,5 @@
 ---
-title: "Progressive Enhancement について考える"
+title: "現代の Progressive Enhancement について考える"
 emoji: "🚶‍♀️"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド", "React"]
