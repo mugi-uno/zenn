@@ -134,9 +134,9 @@ https://speakerdeck.com/azukiazusa1/javascript-nasidedong-zuo-surumodannakodonos
 
 しかし、現実的なユースケースとしてはまだ十分出揃っているとは言えず、ほとんどのケースで JavaScript を用いた何らかの独自実装は必要になります。
 
-また、仮に JavaScript を用いずにネイティブの機能で実現したとしても、その機能は古いブラウザではサポートされていないことも多いため、ある意味 Progressive Enhancement とは逆行する可能性も含んでいます。しかし、これが Progressive Enhancement の捉え方が「SSR をしているけど、一部は Hydration 前でも動作するようにしたい！」といったものであれば有効に活用できます。
+また、仮に JavaScript を用いずにネイティブの機能で実現したとしても、その機能は古いブラウザではサポートされていないことも多いため、「古いブラウザでも動かしたい」というモチベーションから考えると、ある意味 Progressive Enhancement とは逆行することになります。しかし、Progressive Enhancement の捉え方が「JavaScript がロードされる前（Hydration 前など）のタイミングでも動くようにしたい！」といったものであれば有効に活用できます。
 
-何をしたいかによってどう実現するかも変わってきそうです。
+何をしたいか、背景事情によって実現方法も変わってきそうです。
 
 ## フレームワークの機能で Progressive Enhancement の対応は OK？
 
