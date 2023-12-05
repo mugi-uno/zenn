@@ -48,17 +48,17 @@ Google などで調べると簡単に情報が出てくるので詳細な説明�
 
 しかし、現実的に JavaScript が完全に無効なケースはどこまで考えるべきでしょうか。たとえば、JavaScript の利用状況に関してはさまざまな調査が行われており、いずれにしても無効化している割合はかなり小さいという結果が出ているようです。いくつか例を紹介します。
 
-- Blockmetry
-  2016 年時点で全世界のトラフィックの 0.2% で JavaScript が無効
-  https://deliberatedigital.com/blockmetry/javascript-disabled
+**Blockmetry**
+2016 年時点で全世界のトラフィックの 0.2% で JavaScript が無効
+https://deliberatedigital.com/blockmetry/javascript-disabled
 
-- gov.uk (イギリス政府)
-  2013 年時点でイギリス政府のウェブサービス利用者のうち 1.1%が JavaScript の利用なし（明示的な無効化は 0.2%）
-  https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
+**gov.uk (イギリス政府)**
+2013 年時点でイギリス政府のウェブサービス利用者のうち 1.1%が JavaScript の利用なし（明示的な無効化は 0.2%）
+https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
 
-- WebAIM
-  2019 年時点でスクリーンリーダー利用ユーザーのうち 0.7% が JavaScript を無効化
-  https://webaim.org/projects/screenreadersurvey8/#javascript
+**WebAIM**
+2019 年時点でスクリーンリーダー利用ユーザーのうち 0.7% が JavaScript を無効化
+https://webaim.org/projects/screenreadersurvey8/#javascript
 
 これらを多いと見るか少ないと見るかは様々な前提条件によって変わりそうではあります。
 
@@ -89,19 +89,25 @@ Remix や Next.js の観点だと JavaScript を中心にした話になりが�
 
 また、通信回線が遅い環境でのユーザーへの配慮がアクセシビリティ文脈で必要となる可能性もあります。自分が調べた限りでは WCAG や JIS X 8341-3 では回線速度についての直接の言及はない（違ったらすいません）のですが、現実的としては配慮しているケースも多く、国内の公共の Web ページのサイトポリシーなどで言及されていることも珍しくありません。いくつか例を紹介します。
 
-環境省 / ウェブサイト作成ガイドライン
+**環境省**
+
+ウェブサイト作成ガイドライン
 
 > 配慮の対象となる利用者 - "ダイヤルアップ接続など通信速度が速くない環境で利用している"
 
 https://www.env.go.jp/other/gyosei-johoka/web_gl/02_1.html
 
-岐阜県 / 岐阜県ウェブアクセシビリティに関するガイドライン
+**岐阜県**
+
+岐阜県ウェブアクセシビリティに関するガイドライン
 
 > そのほか配慮が必要な人 - "通信速度が遅い（速くない）環境で利用している人"
 
 https://www.pref.gifu.lg.jp/page/6842.html
 
-豊川市 / ウェブアクセシビリティへの取り組み
+**豊川市**
+
+ウェブアクセシビリティへの取り組み
 
 > 主な配慮事項 - "通信速度の遅い回線を使っている方でも画像やファイル等の画像表示が遅くならないように、画像やファイルの容量をできるだけ小さくする"
 
