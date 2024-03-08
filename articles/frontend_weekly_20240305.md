@@ -3,7 +3,7 @@ title: "JSR の Public Beta 公開など : Cybozu Frontend Weekly (2024-03-05号
 emoji: "🎎"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
