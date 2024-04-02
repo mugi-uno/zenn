@@ -4,7 +4,6 @@ emoji: "💥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["nextjs", "フロントエンド", "React"]
 published: false
-publication_name: "cybozu_frontend"
 ---
 
 # Server Actions のコア実装は React 本体が持っている
