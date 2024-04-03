@@ -3,11 +3,11 @@ title: "!importantで上書きできないブラウザのスタイルとは"
 emoji: "🖍️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド", "CSS"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
-## 究極魔法 `!important`
+## `!important` はすべてを上書きできるのか？
 
 CSS において話題に出すといろいろな意味で盛り上がるキーワードが`!important`です。
 
@@ -15,7 +15,7 @@ CSS でのスタイル宣言時に`!important`を付与すると、細かな詳�
 
 さて、ではこの`!important`ですが、何もかもを上書きできるのでしょうか？
 
-実はそうではありません。今回は、CSS 仕様をいろいろと調べているうちに、`!important` で上書きできないスタイルの存在を知ったため、その情報を記事にしています。
+実際のところそうではありません。今回は、CSS 仕様をいろいろと調べているうちに、`!important` で上書きできないスタイルの存在を知ったため、その情報をまとめてみました。
 
 ## CSS における Cascade Sorting Order
 
@@ -137,9 +137,9 @@ main {
 
 ## 最強のスタイル / Important user agent declarations
 
-ここまでは大前提となる知識の話をしていましたが、しれっと **Important user agent declarations** とやらが登場していました。
+さて、ここまでは Origin and Importance の内容についての確認でしたが、その中でしれっと **Important user agent declarations** とやらが登場していました。改めて確認すると、これは「ユーザエージェントスタイルシートとも呼ばれるブラウザが持つスタイルシートの中で、`!important` が付与されているもの」です。
 
-`transition` を除くと一番上です。`!important` が付与された作成者スタイルシートより上ということは、**上書き不可能**と言っても差し支えないでしょう。あまりにも強いですね。
+Origin and Importance 内の順序では `transition` を除くと一番上です。`!important` が付与された作成者スタイルシートよりも上ということは、**上書き不可能**と言っても差し支えないでしょう。あまりにも強いですね。
 
 これはつまり "完全に上書きできないブラウザのスタイル" が存在することを意味します。
 
