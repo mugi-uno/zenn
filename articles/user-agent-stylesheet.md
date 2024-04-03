@@ -197,7 +197,7 @@ input::-webkit-input-placeholder {
 
 ![](/images/ua-style/ua2.png)
 
-特殊なケースではあるので、これ自体は DevTools 上の表示上の問題かもしれません。
+特殊なケースではあるので、これ自体は DevTools 上の表示上の問題かもしれません。（確認バージョン 123.0.6312.87）
 
 ### Safari で確認してみる
 
