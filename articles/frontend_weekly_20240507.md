@@ -13,7 +13,7 @@ publication_name: "cybozu_frontend"
 
 サイボウズ社内では毎週火曜日に Frontend Weekly と題し「一週間の間にあったフロントエンドニュースを共有する会」を開催しています。
 
-今回は、2023 年 5 月 7 日 の Frontend Weekly で取り上げた記事や話題を紹介します。
+今回は、2024 年 5 月 7 日 の Frontend Weekly で取り上げた記事や話題を紹介します。
 
 # 取り上げた記事・話題
 
