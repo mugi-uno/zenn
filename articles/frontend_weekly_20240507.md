@@ -3,7 +3,7 @@ title: "React 19 Beta の公開など : Cybozu Frontend Weekly (2024-05-07号)"
 emoji: "🐌"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
