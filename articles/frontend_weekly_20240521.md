@@ -1,9 +1,9 @@
 ---
 title: "Remix v3 の今後についてなど : Cybozu Frontend Weekly (2024-05-21号)"
-emoji: "🐌"
+emoji: "🎸"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
