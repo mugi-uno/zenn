@@ -1,5 +1,5 @@
 ---
-title: "-------など : Cybozu Frontend Weekly (2024-05-21号)"
+title: "Remix v3 の今後についてなど : Cybozu Frontend Weekly (2024-05-21号)"
 emoji: "🐌"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
@@ -30,7 +30,7 @@ https://speakerdeck.com/mugi_uno/serialize
 
 React の Stream/Serialize に関連する RSC Payload の読み方を解説している資料です。
 
-## Percel における コアの Rust 置き換えに関して
+## Parcel における コアの Rust 置き換えに関して
 
 https://x.com/devongovett/status/1789796247483937045
 
@@ -84,11 +84,12 @@ Remix v3 としてリリース予定だった機能が React Router v7 として
 
 https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/
 
-Web アクセシビリティに関するガイドラインである WCAG 3 のワーキングドラフトが公開されました。
+Web アクセシビリティに関するガイドラインである WCAG 3.0 の Working Draft が公開されました。併せて、WCAG 3.0 のプロジェクトマネージャーである Wilco Fiers 氏による、WCAG 3.0 の概要について解説した [W3C unveils 174 new outcomes for WCAG 3.0](https://www.deque.com/blog/w3c-unveils-174-new-outcomes-for-wcag-3-0/) という記事も公開されています。
 
 ## あとがき
 
-〜〜〜〜〜
+個人的には、Remix v3 が React Router になるという発表でビックリした週でした。
+Remix の名前自体はサーバサイド側の機能特化として残る可能性もあるとのことなので、今後の動向も注目していきたいです。
 
 ---
 
