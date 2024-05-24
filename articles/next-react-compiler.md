@@ -3,7 +3,7 @@ title: "Next.js で React Compiler を試しつつ出力コードを見てみる
 emoji: "🛵"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["nextjs", "フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
