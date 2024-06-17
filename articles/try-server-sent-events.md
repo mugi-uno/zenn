@@ -50,11 +50,10 @@ https://platform.openai.com/docs/api-reference/chat/create
 
 ![ChatGPT API での stream オプション](/images/try-sse/chatgpt-api.png)
 
-# SSE を実装してみる
+## SSE 実装 / サーバー側
 
 というわけで、実際にサーバー側・クライアント側の両方を作ってみます。
-
-## SSE / サーバー側
+まずはサーバー側です。
 
 実装についても MDN の記述が大変参考になるので、まずはそちらを見てみましょう。
 
@@ -77,13 +76,13 @@ https://html.spec.whatwg.org/multipage/server-sent-events.html#event-stream-inte
 
 これを満たすように実装してみましょう。
 
-### デプロイ環境に応じた SSE 対応状況
+## デプロイ環境に応じた SSE 対応状況
 
 せっかくなのでどこかにデプロイして動かしたいところですが、まずはデプロイ先が SSE をサポートしてるかを把握したほうがよさそうです。
 
 いくつかの Edge 環境について調べてみました。
 
-#### AWS / Lambda
+### AWS / Lambda
 
 Lambda は、Streaming に対応しているようです。
 https://aws.amazon.com/jp/blogs/compute/introducing-aws-lambda-response-streaming/
@@ -91,7 +90,7 @@ https://aws.amazon.com/jp/blogs/compute/introducing-aws-lambda-response-streamin
 次の記事も参考になります
 https://zenn.dev/microcms/articles/aws-serverless-http-response-streaming
 
-#### Cloudflare Workers
+### Cloudflare Workers
 
 Worker AI のサンプルなどで `text/event-stream` が登場するため、少なくとも動くようです。
 https://blog.cloudflare.com/ru-ru/workers-ai-streaming-ja-jp
@@ -99,12 +98,12 @@ https://blog.cloudflare.com/ru-ru/workers-ai-streaming-ja-jp
 お世話になる機会も多い DevelopersIO でも、Cloudflare Workers から SSE を返す実装記事があり、参考になりました。
 https://dev.classmethod.jp/articles/cloudflare-workers-langchain-stream/
 
-#### Deno Deploy
+### Deno Deploy
 
 公式ブログにコード例を含むサンプルが掲載されています。
 https://deno.com/blog/deploy-streams#server-sent-events
 
-### Cloudflare Workers での実装
+## Cloudflare Workers での実装
 
 Cloudflare Workers での、簡単な SSE の実装は次のような形となります。
 
@@ -139,7 +138,7 @@ export default {
 - `'Content-Type': 'text/event-stream'` で MIME タイプを指定
 - `ReadableStream` (`TransformStream`) を使ってデータをストリーム送信
 
-### Deno Deploy での実装例
+## Deno Deploy での実装例
 
 Deno Deploy で同様の実装を行ってみた例が次のコードです。
 
@@ -172,7 +171,7 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
 
 大きく違うのは、`ServerSentEventStreamTarget` の存在です。SSE 向けに用意されており、`text/event-stream` の MIME タイプの設定は自動で行われ、`dispatchMessage` などの API を利用することで、`data:` などの Prefix を独自で付与する必要もありません。便利ですね。
 
-### Hono & Cloudflare Workers
+## Hono & Cloudflare Workers
 
 先の Cloudflare Workers の例では独自でレスポンスを構築しましたが、Deno Deploy における `ServerSentEventStreamTarget` のように、Hono を用いることでより簡単に SSE を Cloudflare Workers で実現できます。
 
@@ -203,9 +202,9 @@ app.get("/sse", (c) => {
 
 Deno Deploy と同様、MIME タイプや Prefix などを意識する必要がなく、かなりシンプルに実現できていますね。
 
-## SSE / クライアント側
+# SSE 実装 / クライアント側
 
-### EventSource
+## EventSource
 
 クライアント側での手っ取り早い実装方法としては `EventSource` を使う方法があります。
 
@@ -257,14 +256,14 @@ export const View = ({ url }: Props) => {
 
 受け取ったものから表示されており、AI の回答のような雰囲気が出てますね。
 
-### `EventSource` の課題
+## `EventSource` の課題
 
 `EventSource` でかなり簡単にクライアント側を実装できましたが、`EventSource` にはいくつかの課題が存在しており、場合によっては制約となります。
 
 制約については次の記事も大変参考になりました。
 https://zenn.dev/teramotodaiki/scraps/f016ed832d6f0d
 
-#### 自動的に再接続する
+### 自動的に再接続する
 
 `EventSource` は、接続が終了すると、自動的に再接続するという仕様になっています。
 
@@ -283,7 +282,7 @@ https://html.spec.whatwg.org/multipage/server-sent-events.html#sse-processing-mo
 
 チャットの AI などの場合、発言ごとにレスポンスが完結する形が多いと思われるため、明示的に `EventSource` を閉じるようなイベントを用いるなど、何らかの工夫が必要となってきます。
 
-#### GET 限定
+### GET 限定
 
 `EventSource` は GET リクエストにしか対応しておらず、POST などの他メソッドを使いたい場合には利用できません。
 
@@ -293,7 +292,7 @@ https://platform.openai.com/docs/api-reference/chat/create
 
 ![ChatGPTのAPIがPOSTを要求している図](/images/try-sse/chatgpt-post.png)
 
-### `fetch()`
+## `fetch()`
 
 というわけで、`EventSource` が使えない場合の代替手段ですが、`fetch()` を使って SSE を受信する方法があります。
 
