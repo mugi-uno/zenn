@@ -175,7 +175,7 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
 
 先の Cloudflare Workers の例では独自でレスポンスを構築しましたが、Deno Deploy における `ServerSentEventStreamTarget` のように、Hono を用いることでより簡単に SSE を Cloudflare Workers で実現できます。
 
-Hono には Streaming Helper と呼ばれる API 群が用意されており、その中の `streamSSE` を用いることで、かなり簡単に SSE を実装できます。
+Hono には Streaming Helper と呼ばれる API 群が用意されており、その中の `streamSSE` を使って実装してみると次のような形となります。
 https://hono.dev/helpers/streaming#streamsse
 
 ```typescript
