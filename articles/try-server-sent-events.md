@@ -50,7 +50,7 @@ https://platform.openai.com/docs/api-reference/chat/create
 
 ![ChatGPT API での stream オプション](/images/try-sse/chatgpt-api.png)
 
-## SSE 実装 / サーバー側
+# SSE 実装 / サーバー側
 
 というわけで、実際にサーバー側・クライアント側の両方を作ってみます。
 まずはサーバー側です。
