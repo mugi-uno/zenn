@@ -140,12 +140,3 @@ Storybook における新しい記法である CSF 3.0 と TypeScript 4.9 で追
 個人的には、core-js の記事に心を持っていかれた回でした。
 
 企業規模に問わず OSS には大変お世話になっていますので、自分たちのできることを考えていきたいですね。
-
----
-
-フロントエンドエキスパートチームでは毎月最終火曜の 17 時から Frontend Monthly というイベントを YouTube Live で開催しています。
-その月のフロントエンド注目ニュースやゲストを呼んでの対談などフロントエンドに関する発信をしていますので是非どうぞ！
-https://www.youtube.com/playlist?list=PLPTndynQK4dxLZFEZgOZjt_zKG-0JWoWy
-
-またフロントエンドエキスパートチームでは、一緒にサイボウズのフロントエンドを最高にする仲間を募集しています。興味ある方はこちら ↓ から！
-https://cybozu.github.io/frontend-expert/

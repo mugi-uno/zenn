@@ -96,27 +96,3 @@ Web フロントエンドの技術領域観点について、全 100 項目（�
 ## あとがき
 
 TSKaigi や builderscon など、オフラインのカンファレンスが活発になってきた印象ですね！
-
----
-
-サイボウズでは毎月、最終火曜日の 17 時から Frontend Monthly というイベントを YouTube Live で開催しています。その月のフロントエンド注目ニュースや、ゲストを呼んでの対談など、フロントエンドに関する発信をしていますので是非どうぞ！
-
-https://cybozu.github.io/frontend-monthly/
-
-また、サイボウズでは一緒にサイボウズのフロントエンドをより良くする仲間を募集しています。興味ある方はこちら ↓ から！
-
-**【フロントエンドエキスパート】**
-
-サイボウズのフロントエンドを最高にするためのチームです。
-
-https://cybozu.github.io/frontend-expert/
-
-https://cybozu.co.jp/recruit/entry/career/front-end-expert.html
-
-**【フロントエンドエンジニア（kintone アーキテクチャ刷新 PJ）】**
-
-https://cybozu.co.jp/recruit/entry/career/front-end-engineer-kintone.html
-
-**【フロントエンドエンジニア（サイボウズ Office フロントエンド刷新 PJ）】**
-
-https://cybozu.co.jp/recruit/entry/career/front-end-engineer-office.html
