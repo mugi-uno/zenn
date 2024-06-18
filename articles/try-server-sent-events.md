@@ -50,6 +50,11 @@ https://platform.openai.com/docs/api-reference/chat/create
 
 ![ChatGPT API での stream オプション](/images/try-sse/chatgpt-api.png)
 
+:link: 参考
+
+- [How ChatGPT Uses Server-Sent Events to Stream Real-Time Conversation - DEV Community](https://dev.to/rohitdhas/how-chatgpt-uses-server-sent-events-to-stream-real-time-conversation-3976)
+- [Real-time Web with Server Sent Events | by Maryann Gitonga | Medium](https://medium.com/@maryanngitonga/real-time-web-with-server-sent-events-84a335ac1856)
+
 # SSE 実装 / サーバー側
 
 というわけで、実際にサーバー側・クライアント側の両方を作ってみます。
@@ -174,6 +179,8 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
 ## Hono & Cloudflare Workers
 
 先の Cloudflare Workers の例では独自でレスポンスを構築しましたが、Deno Deploy における `ServerSentEventStreamTarget` のように、Hono を用いることでより簡単に SSE を Cloudflare Workers で実現できます。
+
+参考: https://azukiazusa.dev/blog/hono-streaming-response/
 
 Hono には Streaming Helper と呼ばれる API 群が用意されており、その中の `streamSSE` を使って実装してみると次のような形となります。
 https://hono.dev/helpers/streaming#streamsse
