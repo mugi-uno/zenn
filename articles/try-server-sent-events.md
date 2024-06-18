@@ -50,7 +50,7 @@ https://platform.openai.com/docs/api-reference/chat/create
 
 ![ChatGPT API での stream オプション](/images/try-sse/chatgpt-api.png)
 
-:link: 参考
+参考
 
 - [How ChatGPT Uses Server-Sent Events to Stream Real-Time Conversation - DEV Community](https://dev.to/rohitdhas/how-chatgpt-uses-server-sent-events-to-stream-real-time-conversation-3976)
 - [Real-time Web with Server Sent Events | by Maryann Gitonga | Medium](https://medium.com/@maryanngitonga/real-time-web-with-server-sent-events-84a335ac1856)
