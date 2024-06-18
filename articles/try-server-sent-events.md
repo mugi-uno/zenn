@@ -3,7 +3,7 @@ title: "Server-Sent Events を複数パターンで実装して理解を試み�
 emoji: "⚡️⚡️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド", "sse"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
