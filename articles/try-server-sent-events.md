@@ -1,5 +1,5 @@
 ---
-title: "Server-Sent Events を複数パターンで実装してみる"
+title: "Server-Sent Events を複数パターンで実装して理解を試みる"
 emoji: "⚡️⚡️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド", "sse"]
