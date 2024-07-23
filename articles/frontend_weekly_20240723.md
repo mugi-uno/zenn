@@ -3,7 +3,7 @@ title: "3rd Party Cookie 廃止の方針変更など : Cybozu Frontend Weekly (2
 emoji: "🛟"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
@@ -83,8 +83,8 @@ TypeSpec を用いて OpenAPI スキーマを作成 → Orval で API クライ�
 
 https://astro.build/blog/astro-4120/
 
-Astro 4.12 ガリリースされました。Experimental な機能として、動的にバックエンド側で描画する部分を設ける Server Islands が導入されています。
+Astro 4.12 がリリースされました。Experimental な機能として、動的にバックエンド側で描画する部分を設ける Server Islands が導入されています。
 
 ## あとがき
 
-3rd Party Cookie の方針転換はビッグニュースですね…。今後の動向が注目されます。
+Google の 3rd Party Cookie の方針転換はビッグニュースですね…。今後の動向が注目されます。
