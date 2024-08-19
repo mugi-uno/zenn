@@ -3,7 +3,7 @@ title: "Baseline 2024 Newly Available な機能をみてみよう"
 emoji: "🎂"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
