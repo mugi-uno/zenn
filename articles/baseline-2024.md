@@ -92,7 +92,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:state
 
 たとえば次のコード例の場合、カスタム要素である `MyElement` をクリックすると、カスタム状態として `"clicked"` を内部に保持します。CSS からは `:state(clicked)` でマッチさせることができます。
 
-```ts
+```ts:JavaScript
 class MyElement extends HTMLElement {
   #internals;
 
@@ -110,13 +110,13 @@ class MyElement extends HTMLElement {
 customElements.define("my-element", MyElement);
 ```
 
-```css
+```css:CSS
 my-element:state(clicked) {
   color: red;
 }
 ```
 
-```html
+```html:HTML
 <my-element>MyElement</my-element>
 ```
 
