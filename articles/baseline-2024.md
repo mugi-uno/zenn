@@ -7,6 +7,10 @@ published: false
 publication_name: "cybozu_frontend"
 ---
 
+:::message
+この記事は、[CYBOZU SUMMER BLOG FES '24](https://cybozu.github.io/summer-blog-fes-2024/) (Frontend Stage) DAY 20 の記事です。
+:::
+
 # Baseline とは
 
 Baseline というものをご存知でしょうか。
@@ -26,7 +30,7 @@ Baseline では、各機能について Newly Available と Widely available と
 
 ## 最近の Newly Available をみてみよう
 
-Newly Available はコアブラウザの最新安定バージョンで利用可能になったものです。つまり、最近 Newly Available になった機能とは、近い将来に当たり前に利用されるようになる可能性のある機能とも言えます。
+Newly Available は前述の通りコアブラウザの最新安定バージョンで利用可能になったものです。つまり、最近 Newly Available になった機能とは、近い将来に当たり前に利用されるようになる可能性のある機能とも言えます。
 
 ということで、この記事では、2024 年に入ってから新たに Newly Available となった機能をいくつかピックアップしておさらいしてみたいと思います。
 
@@ -84,6 +88,42 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:state
 
 カスタム要素において任意の状態を扱うための API である `CustomStateSet` と、該当の状態に応じてマッチさせるための CSS 擬似クラスである `:state()` が利用可能になりました。
 
+`CustomStateSet` を利用する場合、カスタム要素の中で `attachInternals()` メソッドを呼び出して得られた `ElementInternals` 経由でアクセスでき、`CustomStateSet` に対して任意の状態を定義した場合、同じ名前で `:state()` 擬似クラスを使うことで CSS 上でもマッチします。
+
+たとえば次のコード例の場合、カスタム要素である `MyElement` をクリックすると、カスタム状態として `"clicked"` を内部に保持します。CSS からは `:state(clicked)` でマッチさせることができます。
+
+```ts
+class MyElement extends HTMLElement {
+  #internals;
+
+  constructor() {
+    super();
+    this.#internals = this.attachInternals();
+    this.addEventListener("click", this.#onClick.bind(this));
+  }
+
+  #onClick() {
+    this.#internals.states.add("clicked");
+  }
+}
+
+customElements.define("my-element", MyElement);
+```
+
+```css
+my-element:state(clicked) {
+  color: red;
+}
+```
+
+```html
+<my-element>MyElement</my-element>
+```
+
+以下の実行例にて、クリックすると文字の色が変わることを確認できます。
+
+@[codepen](https://codepen.io/mugi-uno/pen/MWMQvov?default-tab=js,result)
+
 ## `CSS.registerProperty()` および CSS `@property`
 
 https://developer.mozilla.org/ja/docs/Web/API/CSS/registerProperty_static
@@ -91,7 +131,7 @@ https://developer.mozilla.org/ja/docs/Web/CSS/@property
 
 CSS において、型やデフォルト値などを保持したカスタムプロパティを定義するための JavaScript API である `CSS.registerProperty()` と、同等の仕組みを CSS から直接資料するための `@property` が利用可能になりました。
 
-CSS カスタムプロパティ自体は[すでに Widely available](https://developer.mozilla.org/ja/docs/Web/CSS/--*) であり、すでに幅広いブラウザで利用可能ですが、`CSS.registerProperty()` や `@property` を用いることで、より強力に扱うことができます。
+CSS カスタムプロパティ自体は [Widely available](https://developer.mozilla.org/ja/docs/Web/CSS/--*) であり、すでに幅広いブラウザで利用可能ですが、加えて `CSS.registerProperty()` や `@property` を用いることで、より強力に扱うことができます。
 
 以下は `@property` の例です。`--my-color` という名前でカラーのみを受け付けるカスタムプロパティを定義しています。デフォルトカラーが宣言されており、`inherits: false` により、親要素で定義した値は子孫に継承されていないことがわかります。
 
@@ -211,7 +251,7 @@ document.querySelector(".content3").checkVisibility({ opacityProperty: true });
 
 # まとめ
 
-2024 年 1 月から 8 月で新たに Newly Available になった機能をいくつかピックアップして見ていきました。
+2024 年 1 月から 8 月で新たに Newly Available になった機能をいくつかピックアップして見ていきました。知っていた機能はあったでしょうか？
 
 現状では「普段からめちゃ使っているぜ！」というものは少ないかもしれませんが、すべてのコアブラウザの最新安定版ではすでに利用可能であり、時間が経てば使っていることが当たり前になっている可能性の高い機能たちなので、最低限概要だけでも抑えておくといつか役に立つかも知れませんね。
 
