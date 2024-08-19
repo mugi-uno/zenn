@@ -88,7 +88,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:state
 
 カスタム要素において任意の状態を扱うための API である `CustomStateSet` と、該当の状態に応じてマッチさせるための CSS 擬似クラスである `:state()` が利用可能になりました。
 
-`CustomStateSet` を利用する場合、カスタム要素の中で `attachInternals()` メソッドを呼び出して得られた `ElementInternals` 経由でアクセスでき、`CustomStateSet` に対して任意の状態を定義した場合、同じ名前で `:state()` 擬似クラスを使うことで CSS 上でもマッチします。
+`CustomStateSet` は、[`ElementInternals`](https://developer.mozilla.org/ja/docs/Web/API/ElementInternals)オブジェクトの `states` プロパティ経由で操作できます。実際に利用する際には、カスタム要素の中で `attachInternals()` メソッドを呼び出すことで、カスタム要素に紐付いた `ElementInternals` オブジェクトを得られます。
+
+`CustomStateSet` に対して任意の状態を定義した場合には、同じ名前で `:state()` 擬似クラスを使うことで CSS 上でもマッチします。
 
 たとえば次のコード例の場合、カスタム要素である `MyElement` をクリックすると、カスタム状態として `"clicked"` を内部に保持します。CSS からは `:state(clicked)` でマッチさせることができます。
 
