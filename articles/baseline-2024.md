@@ -156,7 +156,7 @@ https://developer.mozilla.org/ja/docs/Web/API/Popover_API
 
 ## Declarative Shadow DOM および `Document.parseHTMLUnsafe()` / `setHTMLUnsafe()`
 
-https://web.dev/articles/declarative-shadow-dom
+https://web.dev/articles/declarative-shadow-dom?hl=en
 https://developer.mozilla.org/ja/docs/Web/API/Document/parseHTMLUnsafe_static
 https://developer.mozilla.org/ja/docs/Web/API/Element/setHTMLUnsafe
 
@@ -259,7 +259,7 @@ document.querySelector(".content3").checkVisibility({ opacityProperty: true });
 
 なお、Baseline の状況については、一部は Web Platform Dashboard で確認することができます。
 
-https://web.dev/blog/web-platform-dashboard
+https://web.dev/blog/web-platform-dashboard?hl=en
 https://webstatus.dev/
 
 たまに眺めてみると「あ、これもう使っていいのか」という発見があって楽しいので、ぜひチェックしてみてください。
