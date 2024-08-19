@@ -129,7 +129,7 @@ my-element:state(clicked) {
 https://developer.mozilla.org/ja/docs/Web/API/CSS/registerProperty_static
 https://developer.mozilla.org/ja/docs/Web/CSS/@property
 
-CSS において、型やデフォルト値などを保持したカスタムプロパティを定義するための JavaScript API である `CSS.registerProperty()` と、同等の仕組みを CSS から直接資料するための `@property` が利用可能になりました。
+CSS において、型やデフォルト値などを保持したカスタムプロパティを定義するための JavaScript API である `CSS.registerProperty()` と、同等の仕組みを CSS から直接利用するための `@property` が利用可能になりました。
 
 CSS カスタムプロパティ自体は [Widely available](https://developer.mozilla.org/ja/docs/Web/CSS/--*) であり、すでに幅広いブラウザで利用可能ですが、加えて `CSS.registerProperty()` や `@property` を用いることで、より強力に扱うことができます。
 
