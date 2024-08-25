@@ -248,7 +248,7 @@ document.querySelector(".content2").checkVisibility();
 document.querySelector(".content3").checkVisibility();
 // → true (opacity: 0 だがオプション指定が無いため)
 document.querySelector(".content3").checkVisibility({ opacityProperty: true });
-// → true (opacity: 0 でオプション指定があるため)
+// → false (opacity: 0 でオプション指定があるため)
 ```
 
 # まとめ
