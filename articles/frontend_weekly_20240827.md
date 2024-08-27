@@ -21,7 +21,7 @@ publication_name: "cybozu_frontend"
 
 https://craft.faire.com/boosting-performance-faires-transition-to-nextjs-3967f092caaf
 
-https://www.faire.com/ が React Router から Next.js App Router へ移行した際の解説記事です。Remix や Fresh/Deno なども検討した結果、スピードやフレームワークの成熟度、移行作業のボリュームは開発者経験などから Next.js の採用に至ったようです。
+https://www.faire.com/ が React Router から Next.js App Router へ移行した際の解説記事です。Remix や Fresh/Deno なども検討した結果、スピードやフレームワークの成熟度、移行作業のボリュームや開発者経験などから Next.js の採用に至ったようです。
 具体的に改善されたパフォーマンスについても言及されており、結果として離脱率の減少にも繋がったようです。
 
 ## W3C opens community-wide survey | 2024 | News | W3C
@@ -58,7 +58,7 @@ https://jumptoon.com/ で Next.js App Router を採用して開発した際の�
 
 https://x.com/youyuxi/status/1824023061714399292
 
-Vue で将来的に利用される予定のバンドラである Rolldown の開発状況について 開発者である Evan you 氏 よりアナウンスがありました。Rolldown でバンドルしたパッケージが Vue エコシステムのテストをパスしていたり、順調なようです。Vite への統合も進んでおり、ViteConf で詳細が発表されるそうです。
+Vue で将来的に利用される予定のバンドラである Rolldown の開発状況について 開発者である Evan you 氏 よりアナウンスがありました。Rolldown でバンドルしたパッケージが Vue エコシステムのテストをパスしているなど、開発は順調なようです。Vite への統合も進んでおり、ViteConf で詳細が発表されるそうです。
 
 ## Now in Baseline: animating entry effects
 
@@ -72,7 +72,7 @@ https://zenn.dev/cybozu_frontend/articles/20240812_starting-style
 
 https://hacks.mozilla.org/2024/08/puppeteer-support-for-firefox/
 
-puppeteer が v23 で Firefox をサポートしました。従来では Devtools Protocol を用いた実装でしたが、W3C で標準化が進められている WebDriver BiDi が採用されている点などについても解説されています。
+puppeteer が v23 で Firefox をサポートしました。従来では Chrome Devtools Protocol を用いた実装でしたが、W3C で標準化が進められている WebDriver BiDi が採用されている点などについても解説されています。
 
 ## Import Assertions が Chrome 126 から取り除かれた
 
