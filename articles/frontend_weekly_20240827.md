@@ -103,9 +103,20 @@ https://zenn.dev/yumemi_inc/articles/2024-08-25-frontend-conf-hokkaido-2024
 
 2024/8/24 に開催されたフロントエンドカンファレンス北海道 2024 での公開資料についてまとめられている記事です。弊社からも複数名登壇しているので、ぜひチェックしてみてください。
 
+https://speakerdeck.com/ryo_manba/5fen-defen-karu-react-aria-no-liang-itokorokorekaranatokoro
 https://speakerdeck.com/sajikix/the-future-of-frontend-i18n-intl-dot-messageformat
 https://speakerdeck.com/sakito/component-driven-design-and-development
 https://speakerdeck.com/mugi_uno/new-order-in-cascade-sorting-order
+
+## Deno 1.46: The Last 1.x Release
+
+https://deno.com/blog/v1.46
+
+Deno 1.46 がリリースされました。
+
+CLI 操作の簡潔化、ヘルプや進捗状況の表示の改善、`deno serve` のマルチスレッド化、`deno fmt` での HTML・CSS・YAML などのサポート追加、Node.js・npm との互換性の向上、パフォーマンスの改善、といった多くの変更が含まれます。
+
+なおこれは 1.x 系で最後のリリースとなり、近日中に Deno 2 Release Candidate が公開されるようです。
 
 ## あとがき
 
