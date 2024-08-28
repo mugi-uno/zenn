@@ -78,11 +78,9 @@ puppeteer が v23 で Firefox をサポートしました。従来では Chrome 
 
 https://developer.chrome.com/release-notes/126?hl=ja#dreprecate_and_remove_import_assertion_assert_syntax
 
-import の後ろに `assert` を付与しインポートするファイルタイプを付与する構文について、実際にはアサーション以外の機能が必要となったことなどから `with` キーワードがサポートされ、最終的には Chrome 126 で `assert` が削除されました。
+JS エンジンに v8 を利用する Chrome や Node などでは `import` の後ろに `assert` を付与しインポートするファイルタイプを付与する、import assertion という構文がサポートされていました。しかしこの構文ははその後の仕様策定で、セキュリティの懸念や拡張性の観点から `assert` の代わりに `with` キーワードを使用する import attributes という提案に置き換わる方針となりました。これを踏まえ Chrome 126 からは import assertion の構文(`assert` キーワード)でエラーが発生するようになり、すでにサポートしている import attributes (`with` キーワード)への書き換えが必要となります。
 
-これを受けて test262 からも削除されるようです。
-
-https://github.com/tc39/proposal-import-attributes/pull/161
+また、これを受けて test262 からも削除されるようです。
 https://github.com/tc39/test262/pull/4203
 
 ## Server actions are here! - Waku
