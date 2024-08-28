@@ -3,7 +3,7 @@ title: "フロントエンドカンファレンス北海道開催など : Cybozu
 emoji: "🐻"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
