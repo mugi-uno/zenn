@@ -75,7 +75,7 @@ Cascade Layers に関しての機能自体やユースケースに関しての�
 
 https://docusaurus.io/blog/releases/3.6
 
-ドキュメントサイトに特化した静的サイトジェネレータの Docusaurus の 3.6 がリリースされました。Rust ベースのツールに移行による速度やメモリ消費の改善などが含まれます。
+ドキュメントサイトに特化した静的サイトジェネレータの Docusaurus の 3.6 がリリースされました。Rust ベースのツールへの移行によるビルド時間やメモリ消費の改善などが含まれます。
 
 ## Intent to Prototype: aria-actions
 
