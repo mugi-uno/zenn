@@ -3,7 +3,7 @@ title: "State of CSS 2024 公開など : Cybozu Frontend Weekly (2024-11-19号)"
 emoji: "🧣"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
