@@ -33,7 +33,7 @@ Flock と呼ばれる Flutter の Fork プロジェクトの立ち上げにつ�
 
 https://2024.stateofcss.com/en-US
 
-CSS の利用状況などに関してのサーベイである State of CSS の 2024 年度版が公開されました。新しい機能のなかでは、CSS Filter Effects や `:has()` などが多く利用されるようになったようです。機能単位での Baseline 状況も確認でき、知らない機能を知るきっかけにもなりそうです。
+CSS の利用状況などに関してのサーベイである State of CSS の 2024 年度版が公開されました。サーベイ対象の機能の中では CSS Filter Effects や `:has()` などが特に多く利用されるようになったようです。機能単位での Baseline 状況も確認でき、知らない機能を知るきっかけにもなりそうです。
 
 ## Save the Date for JSConf North America 2025: Where JavaScript Meets Adventure on the Chesapeake Bay
 
@@ -45,7 +45,7 @@ https://openjsf.org/blog/why-attend-jsconf-na-2025
 
 https://devclass.com/2024/10/22/should-javascript-be-split-into-two-languages-new-google-driven-proposal-divides-opinion/?ref=hackernoon.com
 
-JavaScript を JavaScript JS0・JSSugar と呼ばれる Engine と Tooling の 2 つに分割するという TC39 への提案に関する解説記事です。
+JavaScript を JS0・JSSugar と呼ばれる Engine と Tooling の 2 つに分割するという TC39 への提案に関する解説記事です。
 
 ## We’re building the future of JavaScript packages
 
