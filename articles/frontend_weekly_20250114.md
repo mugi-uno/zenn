@@ -3,7 +3,7 @@ title: " WinterCG の WinterTC への移行など : Cybozu Frontend Weekly (2024
 emoji: "🏂"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
