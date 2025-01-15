@@ -43,7 +43,7 @@ https://www.mozilla.org/en-US/firefox/134.0/releasenotes/
 https://www.mozilla.org/en-US/firefox/135.0a1/releasenotes/
 
 Firefox 134.0 がリリースされました。`RegExp.escape()` や `Promise.try()` のサポートなどが含まれます。
-また、135.0a1 Nightly では Temporal も実装されており、`javascript.options.experimental.tempor` フラグを有効化することで試せます。
+また、135.0a1 Nightly では Temporal も実装されており、`javascript.options.experimental.temporal` フラグを有効化することで試せます。
 
 ## New Front-End Features For Designers In 2025 — Smashing Magazine
 
