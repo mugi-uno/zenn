@@ -1,5 +1,5 @@
 ---
-title: " WinterCG の WinterTC への移行など : Cybozu Frontend Weekly (2024-1-14号)"
+title: " WinterCG の WinterTC への移行など : Cybozu Frontend Weekly (2025-1-14号)"
 emoji: "🏂"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
