@@ -3,7 +3,7 @@ title: "State of React 2024 公開など : Cybozu Frontend Weekly (2025-02-25号
 emoji: "☕️"
 type: "tech"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
