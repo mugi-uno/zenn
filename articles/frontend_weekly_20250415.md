@@ -3,7 +3,7 @@ title: "フロントエンドカンファレンス東京の開催決定など : 
 emoji: "☕️"
 type: "idea"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
