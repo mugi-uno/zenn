@@ -3,7 +3,7 @@ title: "Introducing Zod 4 beta など : Cybozu Frontend Weekly (2025-04-22号)"
 emoji: "🌷"
 type: "idea"
 topics: ["CybozuFrontendWeekly", "frontend"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 

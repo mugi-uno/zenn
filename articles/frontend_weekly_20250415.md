@@ -1,6 +1,6 @@
 ---
 title: "フロントエンドカンファレンス東京の開催決定など : Cybozu Frontend Weekly (2025-04-15号)"
-emoji: "☕️"
+emoji: "🌸"
 type: "idea"
 topics: ["CybozuFrontendWeekly", "frontend"]
 published: true
