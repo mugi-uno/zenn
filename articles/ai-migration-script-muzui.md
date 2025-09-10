@@ -3,7 +3,8 @@ title: "AIによる大量コードのマイグレーションスクリプト作�
 emoji: "🧨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["JavaScript"]
-published: false
+published: true
+published_at: 2025-09-11 00:00
 publication_name: "cybozu_frontend"
 ---
 
