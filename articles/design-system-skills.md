@@ -3,7 +3,7 @@ title: "デザインシステムを丸ごと Skills にする"
 emoji: "🍭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド"]
-published: false
+published: true
 publication_name: "cybozu_frontend"
 ---
 
