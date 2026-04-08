@@ -1,13 +1,11 @@
 ---
-title: "デザインシステムを Skills から活用する"
+title: "# デザインシステムを Skills にしたら使いやすくなった"
 emoji: "🍭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["フロントエンド"]
 published: false
 publication_name: "cybozu_frontend"
 ---
-
-# デザインシステムを Skills にしたら使いやすくなった
 
 サイボウズのプロダクトである kintone では、社内向けに kintone Design System と呼ばれるデザインシステムが提供されています。
 
